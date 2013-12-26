@@ -5,16 +5,6 @@
          url('../fonts/chess-webfont.ttf') format('truetype'),
          url('../fonts/chess-webfont.woff') format('woff');
 }
-@font-face {
-    font-family: 'FontAwesome';
-    src: url("../fonts/fontawesome.otf"),
-        url("../fonts/fontawesome-webfont.eot"),
-        url("../fonts/fontawesome-webfont.svg"),
-        url("../fonts/fontawesome-webfont.ttf"),
-        url("../fonts/fontawesome-webfont.woff");
-}
-
-
 
 /* --- general styles --- */
 
