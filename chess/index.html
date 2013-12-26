@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<title>Atomic..?</title>
-	<meta name="viewport" content="width=device-width, initial-scale=0.6, user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=0.6">
 	<link rel="icon" type="image/ico" href="img/knight.png"/>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script><style type="text/css"></style>
 	<script type="text/javascript" src="js/chess.js"></script>
@@ -239,41 +239,45 @@
 			<!-- interactives -->
 			<div class="interactives">
 				<form class="box mover">
-					<span>Move from</span>
-					<input id="orig" placeholder="a#"/>
-					<span>to</span>
-					<input id="dest" placeholder="b#"/>
+					<span>Move from
+						<input id="orig" placeholder="a#"/>
+						to
+						<input id="dest" placeholder="b#"/>
+					</span>
 					<button id="move">Submit</button>
 				</form>
 
 				<form class="box exploder">
-					<span>Delete around</span>
-					<input id="explodee" placeholder="c#"/>
+					<span>Delete around
+						<input id="explodee" placeholder="c#"/>
+					</span>
 					<button id="explode">Submit</button>
 				</form>
 
 				<form class="box light inserter">
-					<span>Add a</span>
-					<select id="insertPiece">
-						<option value="Wpawn">pawn (white)</option>
-						<option value="Bpawn">pawn (black)</option>
-						<option value="Wknight">knight (white)</option>
-						<option value="Bknight">knight (black)</option>
-						<option value="Wbishop">bishop (white)</option>
-						<option value="Bbishop">bishop (black)</option>
-						<option value="Wrook">rook (white)</option>
-						<option value="Brook">rook (black)</option>
-						<option value="Wqueen">queen (white)</option>
-						<option value="Bqueen">queen (black)</option>
-					</select>
-					<br />
-					at <input id="insertPlace" placeholder="d#"/>
-					<button id="insert">Submit</button>
+					<span>Add a
+						<select id="insertPiece">
+							<option value="Wpawn">pawn (white)</option>
+							<option value="Bpawn">pawn (black)</option>
+							<option value="Wknight">knight (white)</option>
+							<option value="Bknight">knight (black)</option>
+							<option value="Wbishop">bishop (white)</option>
+							<option value="Bbishop">bishop (black)</option>
+							<option value="Wrook">rook (white)</option>
+							<option value="Brook">rook (black)</option>
+							<option value="Wqueen">queen (white)</option>
+							<option value="Bqueen">queen (black)</option>
+						</select>
+					</span>
+					<span>at <input id="insertPlace" placeholder="d#"/>
+						<button id="insert">Submit</button>
+					</span>
 				</form>
 
 				<form class="box light deleter">
-					<span>Delete piece at</span>
-					<input id="deletee" placeholder="e#"/>
+					<span>Delete piece at
+						<input id="deletee" placeholder="e#"/>
+					</span>
 					<button id="deleteSquare">Submit</button>
 				</form>
 
