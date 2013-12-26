@@ -53,11 +53,10 @@ a {text-decoration: none;}
 #atomic a {color: #ddd;}
 #freely a {color: #eee;}
 
-.links a:hover {padding-left: 3px;}
-#google a:hover {color: #8b8b8b;}
-#halloffame a:hover {color: #9c9c9c;}
-#atomic a:hover {color: #adadad;}
-#freely a:hover {color: #bebebe;}
+#google a:hover {color: #8b8b8b; padding-left: 3px;}
+#halloffame a:hover {color: #9c9c9c; padding-left: 6px;}
+#atomic a:hover {color: #adadad; padding-left: 9px;}
+#freely a:hover {color: #bebebe; padding-left: 12px;}
 /*
 #google span {margin-right: -7px;}
 #google a:hover .blue {color: #3b82ff;}
