@@ -33,10 +33,28 @@ function initialize() {
 	$( '.main' ).css( 'min-height', height - 122 );
 }
 
+
 //check if square is empty
 function isEmpty( id ) {
 	return $( '#' + id ).html() == "";
 }
+//check if square is valid
+function isValid( id ) {
+	var col = id.charCodeAt(0);
+	var row = id.charCodeAt(1);
+	if ( col < 'a') {
+		return false;
+	} else if ( col > 'h' ) {
+		return false;
+	} else if ( row < '1' ) {
+		return false;
+	} else if ( row > '8' ) {
+		return false;
+	}
+	return true;
+}
+
+
 //copy piece from given square to new square
 function copy( orig , dest ) {
 	$( '#' + dest ).html( $( '#' + orig ).html() );
@@ -47,16 +65,35 @@ function deleteAt( id ) {
 }
 
 
+function addCapture( id ) {
+	var piece = $( '#' + id ).html();
+
+	//move to captured
+	if ( $( '#' + id + ' .piece' ).hasClass('white') ) {
+		$( '#whiteHolder' ).append( piece );
+	} else {
+		$( '#blackHolder' ).append( piece );
+	}
+}
+
+
 //move piece from given square to new square
 function move( event ) {
 	event.preventDefault();
 	
-	//grab values
+	//grab ids
 	var orig = $( '#orig' ).val();
 	var dest = $( '#dest' ).val();
 
-	//move
-	copy( orig , dest );
+	//if empty, move
+	if ( isEmpty( dest ) ) {
+		copy( orig , dest );
+
+	//otherwise, capture
+	} else {
+		deleteAround( dest );
+	}
+	//delete original square
 	deleteAt( orig );
 
 	//clear input
@@ -69,7 +106,13 @@ function move( event ) {
 function explode( event ) {
 	event.preventDefault();
 	
-	var id =  $( '#explodee' ).val();
+	//delete & clear input
+	deleteAround( $( '#explodee' ).val() );
+	$( '#explodee' ).val( '' );
+}
+
+
+function deleteAround( id ) {
 
 	//find surrounding rows & cols
 	var col = id.charCodeAt(0);
@@ -84,22 +127,29 @@ function explode( event ) {
 	
 	//delete
 	if ( curC != 'a' ) {
+		addCapture( prevC + prevR );
 		deleteAt( prevC + prevR );
+		addCapture( prevC + curR );
 		deleteAt( prevC + curR );
+		addCapture( prevC + nextR );
 		deleteAt( prevC + nextR );
 	}
+	addCapture( curC + prevR );
 	deleteAt( curC + prevR );
+	addCapture( curC + curR );
 	deleteAt( curC + curR );
+	addCapture( curC + nextR );
 	deleteAt( curC + nextR );
+	addCapture( nextC + prevR );
 	deleteAt( nextC + prevR );
+	addCapture( nextC + curR );
 	deleteAt( nextC + curR );
+	addCapture( nextC + nextR );
 	deleteAt( nextC + nextR );
 
-	//clear input
-	$( '#explodee' ).val( '' );
 }
 
-
+//inserts at a square
 function insert( event ) {
 	event.preventDefault();
 	
@@ -138,6 +188,7 @@ function insert( event ) {
 }
 
 
+//deletes at a square: calls deleteAt
 function deleteSquare( event ) {
 	event.preventDefault();
 
@@ -152,6 +203,7 @@ function reset( event ) {
 	event.preventDefault();
 	
 	$( '.col' ).html( '' );
+	$( '.captured .holder' ).html( '' );
 
 	//pawns
 	$( '.seven .col' ).html( '<div class="piece black pawn">o</div>' );

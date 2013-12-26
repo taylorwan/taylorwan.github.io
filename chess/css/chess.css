@@ -154,7 +154,7 @@ a {text-decoration:none; color: #ddd;}
 
 .board {
     width: 480px;
-    margin: 0 auto;
+    margin: 0 0 0 5px;
     border: 1px solid rgba(0,0,0,.1);
     background: rgba(0,0,0,.1);
     position: relative;
@@ -199,7 +199,6 @@ a {text-decoration:none; color: #ddd;}
 }
 
 .piece {
-    float: left;
     width: 60px;
     text-align: center;
     font: 60px/1 chess;
@@ -224,6 +223,7 @@ a {text-decoration:none; color: #ddd;}
     position: relative;
     top: 10px;
     letter-spacing: -0.5px;
+    padding-left: 5px;
 }
 
 .box {
@@ -344,20 +344,20 @@ footer .me {
 
 @media only screen and (max-width: 850px) {
     
-    .main {left: 0; margin-left: 0; top: 40px;}
-    .wrap {margin: 0 40px;}
-    .rules {display: none;}
+    .main {top:40px;}
     
-    .lefty {bottom: auto;}
-    .righty {width: auto;}
-    .middle {margin-top: 30%;}
+    .righty, .lefty {bottom: auto; width: auto;}
+    .middle {display: none;}
+    .footer {position: fixed;}
 }
 
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 550px) {
     
     body {font-size: 12px;}
     h4 {font-size: 16px;}
+    
+    .main {left: 50%; margin-left: -200px;}
     
     .board {width: 320px;}
     .col {width: 40px; height: 40px;}
@@ -370,17 +370,6 @@ footer .me {
     .inserter {padding: 14px 10px;}
     .reseter {padding: 0 10px 11px;}
     button {font-size: 10px;}
-    
-    .captured {padding-top: 0;}
-}
-
-@media only screen and (max-width: 560px) {
-    .righty {bottom: auto;}
-    .captured {display: none;}
-    
-    .main {left: 50%; margin-left: -200px;}
-    
-    .footer {position: fixed;}
 }
 
 @media only screen and (max-width: 420px) {
