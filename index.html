@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Atomic..?</title>
+	<meta name="viewport" content="width=device-width, initial-scale=0.6, user-scalable=no">
+	<script type="text/javascript">
+		function page_Load() {
+			setTimeout(function() { window.scrollTo(0, 1); }, 100);
+	  	}
+	</script>
+	<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script><style type="text/css"></style> -->
+	<script type="text/javascript" src="js/main.js"></script>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+</head>
+
+<body>
+	<!-- header-->
+	<header>
+		<div class="wrap">
+			<div class="logo">
+				<span>Atomic</span>
+			</div>
+			<ul class="directive">
+				<li id="contact">
+					Contact
+				</li>
+				<!--li id="">
+					
+				</li-->
+			</ul>
+		</div>
+	</header><!-- end header-->
+
+
+	<!-- main -->
+	<div class="main">
+
+		<div class="wrap">
+			<div class="board-holder">
+				<div class="board">
+
+					<!-- black -->
+					<div class="pieces">
+						<div class="black">
+							<div class="piece rook">t</div>
+							<div class="piece knight">j</div>
+							<div class="piece bishop">n</div>
+							<div class="piece queen">w</div>
+							<div class="piece king">l</div>
+							<div class="piece bishop">n</div>
+							<div class="piece knight">j</div>
+							<div class="piece rook">t</div>
+							<div class="piece pawn">o</div>
+							<div class="piece pawn">o</div>
+							<div class="piece pawn">o</div>
+							<div class="piece pawn">o</div>
+							<div class="piece pawn">o</div>
+							<div class="piece pawn">o</div>
+							<div class="piece pawn">o</div>
+							<div class="piece pawn">o</div>
+						</div>
+					</div><!-- end black -->
+
+					<!-- board -->
+					<div class="row eight">
+						<div class="label">8</div>
+						<div class="col a" id="a8"></div>
+						<div class="col b" id="b8"></div>
+						<div class="col c" id="c8"></div>
+						<div class="col d" id="d8"></div>
+						<div class="col e" id="e8"></div>
+						<div class="col f" id="f8"></div>
+						<div class="col g" id="g8"></div>
+						<div class="col h" id="h8"></div>
+					</div>
+					<div class="row seven">
+						<div class="label">7</div>
+						<div class="col a" id="a7"></div>
+						<div class="col b" id="b7"></div>
+						<div class="col c" id="c7"></div>
+						<div class="col d" id="d7"></div>
+						<div class="col e" id="e7"></div>
+						<div class="col f" id="f7"></div>
+						<div class="col g" id="g7"></div>
+						<div class="col h" id="h7"></div>
+					</div>
+					<div class="row six">
+						<div class="label">6</div>
+						<div class="col a" id="a6"></div>
+						<div class="col b" id="b6"></div>
+						<div class="col c" id="c6"></div>
+						<div class="col d" id="d6"></div>
+						<div class="col e" id="e6"></div>
+						<div class="col f" id="f6"></div>
+						<div class="col g" id="g6"></div>
+						<div class="col h" id="h6"></div>
+					</div>
+					<div class="row five">
+						<div class="label">5</div>
+						<div class="col a" id="a5"></div>
+						<div class="col b" id="b5"></div>
+						<div class="col c" id="c5"></div>
+						<div class="col d" id="d5"></div>
+						<div class="col e" id="e5"></div>
+						<div class="col f" id="f5"></div>
+						<div class="col g" id="g5"></div>
+						<div class="col h" id="h5"></div>
+					</div>
+					<div class="row four">
+						<div class="label">4</div>
+						<div class="col a" id="a4"></div>
+						<div class="col b" id="b4"></div>
+						<div class="col c" id="c4"></div>
+						<div class="col d" id="d4"></div>
+						<div class="col e" id="e4"></div>
+						<div class="col f" id="f4"></div>
+						<div class="col g" id="g4"></div>
+						<div class="col h" id="h4"></div>
+					</div>
+					<div class="row three">
+						<div class="label">3</div>
+						<div class="col a" id="a3"></div>
+						<div class="col b" id="b3"></div>
+						<div class="col c" id="c3"></div>
+						<div class="col d" id="d3"></div>
+						<div class="col e" id="e3"></div>
+						<div class="col f" id="f3"></div>
+						<div class="col g" id="g3"></div>
+						<div class="col h" id="h3"></div>
+					</div>
+					<div class="row two">
+						<div class="label">2</div>
+						<div class="col a" id="a2"></div>
+						<div class="col b" id="b2"></div>
+						<div class="col c" id="c2"></div>
+						<div class="col d" id="d2"></div>
+						<div class="col e" id="e2"></div>
+						<div class="col f" id="f2"></div>
+						<div class="col g" id="g2"></div>
+						<div class="col h" id="h2"></div>
+					</div>
+					<div class="row one">
+						<div class="label">1</div>
+						<div class="col a" id="a1"></div>
+						<div class="col b" id="b1"></div>
+						<div class="col c" id="c1"></div>
+						<div class="col d" id="d1"></div>
+						<div class="col e" id="e1"></div>
+						<div class="col f" id="f1"></div>
+						<div class="col g" id="g1"></div>
+						<div class="col h" id="h1"></div>
+					</div>
+					<div class="zero">
+						<div class="label"></div>
+						<div class="label">a</div>
+						<div class="label">b</div>
+						<div class="label">c</div>
+						<div class="label">d</div>
+						<div class="label">e</div>
+						<div class="label">f</div>
+						<div class="label">g</div>
+						<div class="label">h</div>
+					</div><!-- end board -->
+
+					<!-- white -->
+					<div class="pieces">
+						<div class="white">
+							<div class="piece pawn">p</div>
+							<div class="piece pawn">p</div>
+							<div class="piece pawn">p</div>
+							<div class="piece pawn">p</div>
+							<div class="piece pawn">p</div>
+							<div class="piece pawn">p</div>
+							<div class="piece pawn">p</div>
+							<div class="piece pawn">p</div>
+							<div class="piece rook">r</div>
+							<div class="piece knight">h</div>
+							<div class="piece bishop">b</div>
+							<div class="piece queen">q</div>
+							<div class="piece king">k</div>
+							<div class="piece bishop">b</div>
+							<div class="piece knight">h</div>
+							<div class="piece rook">r</div>
+						</div>
+					</div><!-- end white -->
+
+				</div>
+			</div>
+
+		</div>
+
+	</div><!-- end main-->
+
+	<footer>
+		<div class="wrap">
+			<div class="me">//TW &apos;13</div>
+		</div>
+	</footer>
+
+</body>
+</html>

@@ -1,0 +1,208 @@
+@font-face {
+    font-family: 'Chess';
+    src: url('../fonts/chess-webfont.eot') format('embedded-opentype'),
+         url('../fonts/chess-webfont.svg') format('svg'),
+         url('../fonts/chess-webfont.ttf') format('truetype'),
+         url('../fonts/chess-webfont.woff') format('woff');
+}
+@font-face {
+    font-family: 'FontAwesome';
+    src: url("../fonts/fontawesome.otf"),
+        url("../fonts/fontawesome-webfont.eot"),
+        url("../fonts/fontawesome-webfont.svg"),
+        url("../fonts/fontawesome-webfont.ttf"),
+        url("../fonts/fontawesome-webfont.woff");
+}
+
+
+
+/* --- general styles --- */
+
+body {
+    font: 13px/1.22 Helvetica, Arial, sans-serif;
+    text-transform: lowercase;
+    color: #666;
+    min-width: 500px;
+}
+
+.main {
+    position: relative;
+    top: 47px;
+    padding: 40px 0;
+    background: #fcfcfc;
+    min-height: 614px;
+}
+
+.wrap {
+    margin: 0 40px;
+}
+
+h1 {font-size: 42px;}
+h2 {font-size: 32px;}
+h3 {font-size: 24px;}
+h4 {font-size: 16px;}
+p {font-size: 15px;margin-bottom: 8px;}
+
+i {font-family: FontAwesome;}
+
+.light{opacity: .8;}
+
+a {text-decoration:none;}
+
+:hover {
+    transition: all linear .2s;
+    -webkit-transition: all linear .2s;
+    -moz-transition: all linear .2s;
+    -ms-transition: all linear .2s;
+    -o-transition: all linear .2s;
+}
+
+
+/* --- header --- */
+
+header, footer {
+    width: 100%;
+    padding: 10px 0;
+    box-shadow: 0 0 0 3px #eee, 0 0 5px #eee inset;
+    background: #fefefe;
+    color: #888;
+}
+header {
+    position: fixed;
+    z-index: 30;
+}
+
+header .logo {
+    float: left;
+}
+
+header .logo span {
+    font-size: 20px;
+}
+
+header .directive {
+    float: right;
+    position: relative;
+}
+
+header .directive li {
+    float: left;
+    margin-left: 20px;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+header .directive li.active {
+    color: #444;
+    cursor: pointer;
+}
+
+header .directive li:hover {
+    color: #444;
+    cursor: pointer;
+}
+
+
+
+/* --- board styles --- */
+
+.board {
+    width: 480px;
+    margin: 0 auto;
+    border: 1px solid rgba(0,0,0,.1);
+    background: rgba(0,0,0,.1);
+    position: relative;
+}
+
+.board .label {
+    position: absolute;
+    margin-left: -17px;
+    font-size: 16px;
+    line-height: 60px;
+}
+.board .zero .label {
+    position: relative;
+    margin-left: 0;
+    line-height: 30px;
+    float: left;
+    width: 60px;
+    text-align: center;
+}
+
+.row {
+    clear: both;
+    overflow: hidden;
+}
+.row:nth-child(even) .col:nth-child(odd),
+.row:nth-child(odd) .col:nth-child(even) {
+    background: rgba(0,0,0,.4);
+}
+
+.col {
+    float: left;
+    height: 60px;
+    width: 60px;
+}
+
+
+
+/* --- pieces --- */
+
+.pieces {
+    position: absolute;
+}
+
+.piece {
+    float: left;
+    width: 60px;
+    text-align: center;
+    font: 60px/1 chess;
+    color: #444;
+}
+.white {
+    margin-top: -120px;
+}
+.piece:hover {
+    cursor: pointer;
+}
+
+
+/* --- footer --- */
+
+footer {
+    position: absolute;
+    bottom: 0;
+}
+
+footer .me {
+    float: right;
+}
+
+
+/* --------
+ * RESPONSIVENESS
+ *       -------- */
+
+
+/* --- normal laptop sizes --- */
+
+@media only screen and (max-width: 1450px) {
+}
+
+@media only screen and (max-width: 1250px) {
+}
+
+@media only screen and (max-width: 1100px) {
+}
+
+
+/* --- older laptops, smaller screens --- */
+
+@media only screen and (max-width: 900px) {
+}
+
+@media only screen and (max-width: 700px) {
+}
+
+@media only screen and (max-width: 600px) {
+}

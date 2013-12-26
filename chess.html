@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Atomic..?</title>
+	<meta name="viewport" content="width=device-width, initial-scale=0.6, user-scalable=no">
+	<link rel="icon" type="image/ico" href="img/knight.png"/>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script><style type="text/css"></style>
+	<script type="text/javascript" src="js/chess.js"></script>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/chess.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+</head>
+
+<body>
+	<!-- asides-->
+	<aside class="lefty">
+		<div class="wrap">
+
+			<div class="logo">
+				<span>Atomic</span>
+			</div>
+
+			<ol class="rules">
+				<h4>Rules</h4>
+				<li>All normal chess rules apply</li>
+				<li>When a piece is captured, an explosion occurs on the square where the piece is captured. This blows up:
+					<br /> - the captured piece
+					<br /> - the capturing piece
+					<br /> - all pieces within a one-square radius
+				</li>
+				<li>The game ends by checkmate, or by the explosion of the opponent's king</li>
+				<li>Suicide (i.e. a move causing your own king's explosion) is not allowed</li>
+			</ol>
+
+		</div>
+	</aside>
+
+	<aside class="righty">
+		<div class="wrap">
+
+			<ul class="directive">
+				<li id="contact">
+					Contact
+				</li>
+			</ul>
+
+			<!-- contact -->
+			<div class="contact">
+				<div class="exit"></div>
+				<h4>Send me a note!</h4>
+				<div class="email">
+					<a href="mailto:taylor@splashthat.com">taylor@splashthat.com</a>
+				</div>
+			</div><!-- end contact -->
+
+
+			<div class="footer">//TW &apos;13</div>
+		
+		</div>
+	</aside><!-- end aside-->
+
+
+	<!-- main -->
+	<div class="main">
+		<div class="wrap">
+
+			<!-- board -->
+			<div class="board">
+
+				<div class="row eight">
+					<div class="label">8</div>
+					<div class="col a" id="a8">
+						<div class="piece black rook">t</div>
+					</div>
+					<div class="col b" id="b8">
+						<div class="piece black knight">j</div>
+					</div>
+					<div class="col c" id="c8">
+						<div class="piece black bishop">n</div>
+					</div>
+					<div class="col d" id="d8">
+						<div class="piece black queen">w</div>
+					</div>
+					<div class="col e" id="e8">
+						<div class="piece black king">l</div>
+					</div>
+					<div class="col f" id="f8">
+						<div class="piece black bishop">n</div>
+					</div>
+					<div class="col g" id="g8">
+						<div class="piece black knight">j</div>
+					</div>
+					<div class="col h" id="h8">
+						<div class="piece black rook">t</div>
+					</div>
+				</div>
+				<div class="row seven">
+					<div class="label">7</div>
+					<div class="col a" id="a7">
+						<div class="piece black pawn">o</div>
+					</div>
+					<div class="col b" id="b7">
+						<div class="piece black pawn">o</div>
+					</div>
+					<div class="col c" id="c7">
+						<div class="piece black pawn">o</div>
+					</div>
+					<div class="col d" id="d7">
+						<div class="piece black pawn">o</div>
+					</div>
+					<div class="col e" id="e7">
+						<div class="piece black pawn">o</div>
+					</div>
+					<div class="col f" id="f7">
+						<div class="piece black pawn">o</div>
+					</div>
+					<div class="col g" id="g7">
+						<div class="piece black pawn">o</div>
+					</div>
+					<div class="col h" id="h7">
+						<div class="piece black pawn">o</div>
+					</div>
+				</div>
+				<div class="row six">
+					<div class="label">6</div>
+					<div class="col a" id="a6"></div>
+					<div class="col b" id="b6"></div>
+					<div class="col c" id="c6"></div>
+					<div class="col d" id="d6"></div>
+					<div class="col e" id="e6"></div>
+					<div class="col f" id="f6"></div>
+					<div class="col g" id="g6"></div>
+					<div class="col h" id="h6"></div>
+				</div>
+				<div class="row five">
+					<div class="label">5</div>
+					<div class="col a" id="a5"></div>
+					<div class="col b" id="b5"></div>
+					<div class="col c" id="c5"></div>
+					<div class="col d" id="d5"></div>
+					<div class="col e" id="e5"></div>
+					<div class="col f" id="f5"></div>
+					<div class="col g" id="g5"></div>
+					<div class="col h" id="h5"></div>
+				</div>
+				<div class="row four">
+					<div class="label">4</div>
+					<div class="col a" id="a4"></div>
+					<div class="col b" id="b4"></div>
+					<div class="col c" id="c4"></div>
+					<div class="col d" id="d4"></div>
+					<div class="col e" id="e4"></div>
+					<div class="col f" id="f4"></div>
+					<div class="col g" id="g4"></div>
+					<div class="col h" id="h4"></div>
+				</div>
+				<div class="row three">
+					<div class="label">3</div>
+					<div class="col a" id="a3"></div>
+					<div class="col b" id="b3"></div>
+					<div class="col c" id="c3"></div>
+					<div class="col d" id="d3"></div>
+					<div class="col e" id="e3"></div>
+					<div class="col f" id="f3"></div>
+					<div class="col g" id="g3"></div>
+					<div class="col h" id="h3"></div>
+				</div>
+				<div class="row two">
+					<div class="label">2</div>
+					<div class="col a" id="a2">
+						<div class="piece white pawn">p</div>
+					</div>
+					<div class="col b" id="b2">
+						<div class="piece white pawn">p</div>
+					</div>
+					<div class="col c" id="c2">
+						<div class="piece white pawn">p</div>
+					</div>
+					<div class="col d" id="d2">
+						<div class="piece white pawn">p</div>
+					</div>
+					<div class="col e" id="e2">
+						<div class="piece white pawn">p</div>
+					</div>
+					<div class="col f" id="f2">
+						<div class="piece white pawn">p</div>
+					</div>
+					<div class="col g" id="g2">
+						<div class="piece white pawn">p</div>
+					</div>
+					<div class="col h" id="h2">
+						<div class="piece white pawn">p</div>
+					</div>
+				</div>
+				<div class="row one">
+					<div class="label">1</div>
+					<div class="col a" id="a1">
+						<div class="piece white rook">r</div>
+					</div>
+					<div class="col b" id="b1">
+						<div class="piece white knight">h</div>
+					</div>
+					<div class="col c" id="c1">
+						<div class="piece white bishop">b</div>
+					</div>
+					<div class="col d" id="d1">
+						<div class="piece white queen">q</div>
+					</div>
+					<div class="col e" id="e1">
+						<div class="piece white king">k</div>
+					</div>
+					<div class="col f" id="f1">
+						<div class="piece white bishop">b</div>
+					</div>
+					<div class="col g" id="g1">
+						<div class="piece white knight">h</div>
+					</div>
+					<div class="col h" id="h1">
+						<div class="piece white rook">r</div>
+					</div>
+				</div>
+				<div class="zero">
+					<div class="label"></div>
+					<div class="label">a</div>
+					<div class="label">b</div>
+					<div class="label">c</div>
+					<div class="label">d</div>
+					<div class="label">e</div>
+					<div class="label">f</div>
+					<div class="label">g</div>
+					<div class="label">h</div>
+				</div>
+
+			</div><!-- end board -->
+
+
+			<!-- interactives -->
+			<div class="interactives">
+				<form class="box mover">
+					<span>Move from</span>
+					<input id="orig" placeholder="a#"/>
+					<span>to</span>
+					<input id="dest" placeholder="b#"/>
+					<button id="move">Submit</button>
+				</form>
+
+				<form class="box exploder">
+					<span>Delete around</span>
+					<input id="explodee" placeholder="c#"/>
+					<button id="explode">Submit</button>
+				</form>
+
+				<form class="box light inserter">
+					<span>Add a</span>
+					<select id="insertPiece">
+						<option value="Wpawn">pawn (white)</option>
+						<option value="Bpawn">pawn (black)</option>
+						<option value="Wknight">knight (white)</option>
+						<option value="Bknight">knight (black)</option>
+						<option value="Wbishop">bishop (white)</option>
+						<option value="Bbishop">bishop (black)</option>
+						<option value="Wrook">rook (white)</option>
+						<option value="Brook">rook (black)</option>
+						<option value="Wqueen">queen (white)</option>
+						<option value="Bqueen">queen (black)</option>
+					</select>
+					<br />
+					at <input id="insertPlace" placeholder="d#"/>
+					<button id="insert">Submit</button>
+				</form>
+
+				<form class="box light deleter">
+					<span>Delete piece at</span>
+					<input id="deletee" placeholder="e#"/>
+					<button id="deleteSquare">Submit</button>
+				</form>
+
+				<form class="box light reseter">
+					<button id="reset">Reset All</button>
+				</form>
+
+			</div><!-- end interactives -->
+
+		</div>
+
+
+	</div><!-- end main-->
+
+</body>
+</html><!-- end html -->
