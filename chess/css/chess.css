@@ -31,7 +31,7 @@ body {
     position: absolute;
     padding: 20px 0;
     left: 50%;
-    margin-left: -271px;
+    margin-left: -270px;
 }
 
 .wrap {
@@ -73,6 +73,11 @@ a {text-decoration:none; color: #ddd;}
 
 .righty {
     right: 0;
+    text-align: right;
+}
+
+.middle {
+    margin-top: 40%;
 }
 
 
@@ -83,7 +88,6 @@ a {text-decoration:none; color: #ddd;}
 }
 
 .rules {
-    margin-top: 20px;
     margin-left: 15px;
     list-style: decimal;
 }
@@ -104,6 +108,7 @@ a {text-decoration:none; color: #ddd;}
 .directive li {
     float: right;
     font-size: 16px;
+    line-height: 24px;
 }
 
 .directive li.active {
@@ -115,6 +120,27 @@ a {text-decoration:none; color: #ddd;}
     color: #444;
     cursor: pointer;
 }
+
+
+.captured {
+    padding-top: 10px;
+}
+.captured .holder {
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.captured .piece {
+    float: none;
+    display: inline-block;
+    font-size: 30px;
+    width: auto;
+    line-height: 30px;
+    padding: 0 4px;
+    letter-spacing: -8px;
+}
+.captured .pawn {padding: 0;}
+
 
 .footer {
     position: absolute;
@@ -235,7 +261,7 @@ button:hover {
 
 .contact {
     width: 175px;
-    padding: 0px 10px 27px 45px;
+    padding: 0px 10px 27px 50px;
     background: rgba(0, 0, 0, 0.5);
     color: #eee;
     position: fixed;
@@ -245,7 +271,6 @@ button:hover {
     border-bottom-left-radius: 30%;
     
     box-shadow: 9px 4px 12px rgba(0, 0, 0, 0.4);
-    z-index: 2;
     transform: rotate(8deg);
     -webkit-transform: rotate(8deg);
     -moz-transform: rotate(8deg);
@@ -272,7 +297,6 @@ button:hover {
     left: 3px;
     font-size: 24px;
     line-height: 0;
-    z-index: 31;
 }
 .contact .exit:hover {cursor: pointer;}
 
@@ -299,11 +323,11 @@ footer .me {
  * RESPONSIVENESS
  *       -------- */
 
-/* --- older laptops, smaller screens --- */
+/* --- regular laptop size --- */
 
 @media only screen and (max-width: 1100px) {
     
-    .main {margin-left: -231px;}
+    .main {margin-left: -230px;}
     
     .board {width: 400px;}
     .col {width: 50px; height: 50px;}
@@ -318,12 +342,22 @@ footer .me {
 
 /* --- older laptops, smaller screens --- */
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 850px) {
+    
+    .main {left: 0; margin-left: 0; top: 40px;}
+    .wrap {margin: 0 40px;}
+    .rules {display: none;}
+    
+    .lefty {bottom: auto;}
+    .righty {width: auto;}
+    .middle {margin-top: 30%;}
+}
+
+
+@media only screen and (max-width: 650px) {
     
     body {font-size: 12px;}
     h4 {font-size: 16px;}
-    
-    .main {margin-left: -191px;}
     
     .board {width: 320px;}
     .col {width: 40px; height: 40px;}
@@ -336,11 +370,33 @@ footer .me {
     .inserter {padding: 14px 10px;}
     .reseter {padding: 0 10px 11px;}
     button {font-size: 10px;}
+    
+    .captured {padding-top: 0;}
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 560px) {
+    .righty {bottom: auto;}
+    .captured {display: none;}
     
-    .main {left: 0; margin-left: 0; top: 30px;}
-    .wrap {margin: 0 40px;}
-    .rules {display: none;}
+    .main {left: 50%; margin-left: -200px;}
+    
+    .footer {position: fixed;}
+}
+
+@media only screen and (max-width: 420px) {
+    
+    .wrap {margin: 0 20px;}
+    .main {margin-left: -160px;}
+    
+    .board {width: 280px;}
+    .col {width: 35px; height: 35px;}
+    .board .label {line-height: 35px; font-size: 14px;}
+    .board .zero .label {width: 35px;}
+    .piece {font-size: 35px; width: 35px;}
+    
+    .interactives {width: 280px; font-size: 12px;}
+    .box {width: 128px; padding: 10px 5px;}
+    .inserter {padding: 14px 5px;}
+    .reseter {padding: 0 5px 11px;}
+    button {font-size: 10px;}
 }
