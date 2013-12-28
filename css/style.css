@@ -86,6 +86,13 @@ footer .social-links li {
     font-size: 28px;
 }
 
+footer .social-links a:hover {
+    transition: all linear .15s;
+    -webkit-transition: all linear .15s;
+    -moz-transition: all linear .15s;
+    -ms-transition: all linear .15s;
+    -o-transition: all linear .15s;
+}
 footer .social-links a {color: #666;}
 footer .social-links #linkedin a:hover {color: #0e76a8;}
 footer .social-links #github a:hover {color: #171515;}
