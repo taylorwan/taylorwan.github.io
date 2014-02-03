@@ -13,6 +13,13 @@
          url('../fonts/OpenSans-Regular-webfont.woff') format('woff');
 }
 @font-face {
+    font-family: 'OpenSansItalic';
+    src: url('../fonts/OpenSans-Italic-webfont.eot') format('embedded-opentype'),
+         url('../fonts/OpenSans-Italic-webfont.svg') format('svg'),
+         url('../fonts/OpenSans-Italic-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Italic-webfont.woff') format('woff');
+}
+@font-face {
     font-family: 'OpenSansSemiBold';
     src: url('../fonts/OpenSans-Semibold-webfont.eot') format('embedded-opentype'),
          url('../fonts/OpenSans-Semibold-webfont.svg') format('svg'),
@@ -95,9 +102,12 @@ header {
 }
 
 header .logo {
-    color: #888;
+    color: rgb(68, 123, 223);
     float: left;
     height: 40px;
+    font: 24px/40px OpenSansItalic, Helvetica, Arial, sans-serif;
+    font-style: italic;
+    letter-spacing: -1px;
 }
 
 header .logo img {
@@ -106,9 +116,8 @@ header .logo img {
 
 header .logo span {
     position: relative;
-    font: 24px/1.22 OpenSansLight, Helvetica, Arial, sans-serif;
-    top: -12px;
-    letter-spacing: -1px;
+    color: #888;
+    font: 19px/40px OpenSansLight, Helvetica, Arial, sans-serif;
 }
 
 header .directive {
@@ -221,19 +230,10 @@ header .directive li:hover {
     padding: 30px 30px 30px 40px;
 }
 
-.intro .content .google {
-    display: inline-block;
-    font-size: 48px;
+.intro .splash {
+    color: rgb(192, 192, 67);
+    text-shadow: 1px 1px rgba(255,255, 255, 0.5);
 }
-
-.intro .content span {
-    margin-right: -12px;
-    display: inline-block;
-}
-.intro .content .blue {color: #3b82ff;}
-.intro .content .red {color: #f75647;}
-.intro .content .yellow {color: #fbc744;}
-.intro .content .green {color: #21c676;}
 
 
 /* --- pane : about --- */
@@ -422,6 +422,11 @@ header .directive li:hover {
     background: url(../img/ny.jpg) center 10% no-repeat;
 }
 
+.why .content {
+    background: rgba(0, 0, 10, 0.6);
+    color: #fff;
+}
+
 .why .caption {
     background: rgba(23, 23, 37, 0.5);
 }
@@ -548,7 +553,6 @@ footer .me {
 
 @media only screen and (max-width: 1100px) {
     
-    .intro .content .google {font-size: 42px;}
     h1 {font-size: 36px !important;}
     h2 {font-size: 26px;}
     h3 {font-size: 20px;}
@@ -558,7 +562,7 @@ footer .me {
     
 /*    header,
     header .logo {height: 30px;}*/
-    header .logo span {font-size: 20px; top: -10px;}
+    header .logo span {font-size: 20px;}
     header .directive li {margin-left: 16px; font-size: 14px !important; line-height: 24px !important;}
     
     /*.main {top: 51px;}*/
@@ -587,7 +591,6 @@ footer .me {
 
 @media only screen and (max-width: 700px) {
     
-    .intro .content .google {font-size: 42px;}
     h1 {font-size: 34px !important;}
     h2 {font-size: 26px;}
     h3 {font-size: 20px;}
