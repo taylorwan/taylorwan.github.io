@@ -48,23 +48,16 @@ a {text-decoration: none;}
     /*color: rgb(115, 33, 136);*/
 }
 
-#google a {color: #bbb;}
+#resume a {color: #bbb;}
 #halloffame a {color: #ccc;}
 #atomic a {color: #ddd;}
 #freely a {color: #eee;}
 
 .links a:hover {padding-left: 3px;}
-#google a:hover {color: #8b8b8b;}
+#resume a:hover {color: #8b8b8b;}
 #halloffame a:hover {color: #9c9c9c;}
 #atomic a:hover {color: #adadad;}
 #freely a:hover {color: #bebebe;}
-/*
-#google span {margin-right: -7px;}
-#google a:hover .blue {color: #3b82ff;}
-#google a:hover .red {color: #f75647;}
-#google a:hover .yellow {color: #fbc744;}
-#google a:hover .green {color: #21c676;}
-*/
 
 
 /* --- footer --- */
