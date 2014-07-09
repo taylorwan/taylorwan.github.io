@@ -124,6 +124,7 @@ img { max-height: 100%; max-width: 100%;}
 }
 
 
+
 /* panes */
 
 .wrap {
@@ -159,7 +160,6 @@ img { max-height: 100%; max-width: 100%;}
 	left: 0;
 	width: 100%;
 }
-
 
 
 /* pane : gioke */
@@ -204,11 +204,32 @@ img { max-height: 100%; max-width: 100%;}
 	left: 20px;
 	right: 20px;
 	background: #fff;
-	padding: 0.2em 0 1.1em;
+	padding: 0.2em 0;
 	font-size: 2.5em;
 	/* border-top: 1px solid #eee; */
 }
 
 .pane.end img {
 	width: 550px;
+}
+
+
+
+
+/* slacking mobile styles */
+@media only screen and (max-width:1300px) {
+	.pane.end .title {font-size: 2.2em;}
+	.pane.end img {width: 500px}
+}
+
+@media only screen and (max-width:1200px) {
+	.pane.end .title span {display: block;}
+}
+
+@media only screen and (max-width:850px) {
+	.pane.end .title {max-width: 450px; margin: 0 auto; left: auto; right: auto; position: relative; margin-top: -60px; top: -20px}
+}
+
+@media only screen and (max-width:650px) {
+	.pane.intro {background-position: center;}
 }
