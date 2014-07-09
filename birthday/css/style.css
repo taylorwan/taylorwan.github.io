@@ -163,6 +163,20 @@ img { max-height: 100%; max-width: 100%;}
 }
 
 
+/* pane : video */
+
+#introVid {
+    box-shadow: #000 0 0 20px;
+    padding:20px;
+    padding-bottom:50px;
+    -webkit-transform: rotate(-2deg);
+    -moz-transform: rotate(-2deg);
+    -ms-transform: rotate(-2deg);
+    -o-transform: rotate(-2deg);
+    transform: rotate(-2deg);
+}
+
+
 /* pane : gioke */
 
 .pane.gioke .wrap {
