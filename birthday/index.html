@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>♞</title>
+	<meta name="viewport" content="width=device-width, initial-scale=0.8">
+	<link rel="icon" type="image/ico" href="img/favicon.jpg"/>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="js/main.js"></script>
+	
+	<link rel="stylesheet" href="../css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+	<!-- main -->
+	<div class="main viewport" current="intro">
+
+		<!-- content -->
+		<div class="content">
+
+			<div class="pane intro current" id="intro">
+				<a onclick="nextPane();">
+					<div class="wrap">
+
+					</div>
+				</a>
+			</div>
+
+			<div class="pane video" id="video">
+				<a onclick="nextPane();">
+					<div class="wrap">
+						<iframe id="introVid" width="560" height="315" src="http://www.youtube.com/embed/bJ7B9x027uc?rel=0&autohide=1&showinfo=0" frameborder="0" allowfullscreen></iframe>
+					</div>
+				</a>
+			</div>
+
+			<div class="pane gioke" id="gioke">
+				<a onclick="nextPane();">
+					<div class="wrap vertical-centering">
+						<h1 class="title">And...I hear you like giokes?</h1>
+						<img src="img/nonvecchio.png" />
+					</div>
+				</a>
+			</div>
+
+			<div class="pane end" id="end">
+				<div class="wrap vertical-centering">
+					<img src="img/balloons.png" />
+					<h1 class="title">Tanti Auguri!!! Congrats on making it to 22 (:</h1>
+				</div>
+
+				<div id="backToTop" class="vertical-centering">
+					<i class="fa fa-chevron-up"></i>
+					Top
+				</div>
+			</div>
+
+			<div class="pane penultimate" id="penultimate">
+				<a id="dissolveMe" onclick="dissolve();">
+					<div class="wrap vertical-centering">
+						<h1 class="title">Okay, that was bad. But anyways...</h1>
+					</div>
+				</a>
+			</div>
+
+
+		</div><!-- end content -->
+
+		<ul id="scrollTools" class="vertical-centering">
+			<li class="scrollTool" id="scrollUp">
+				<i class="fa fa-chevron-up"></i>
+			</li>
+			<li class="scrollTool" id="scrollDown">
+				<i class="fa fa-chevron-down"></i>
+			</li>
+		</ul>
+
+	</div><!-- end main-->
+
+</body>
+</html>
