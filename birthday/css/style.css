@@ -144,7 +144,11 @@ img { max-height: 100%; max-width: 100%;}
 	padding: 1em 0;
 }
 
-
+.pane .polaroid {
+    box-shadow: #000 0 0 20px;
+    padding: 20px;
+    padding-bottom: 50px;
+}
 
 /* pane : intro */
 
@@ -165,10 +169,7 @@ img { max-height: 100%; max-width: 100%;}
 
 /* pane : video */
 
-#introVid {
-    box-shadow: #000 0 0 20px;
-    padding:20px;
-    padding-bottom:50px;
+.pane.video #introVid {
     -webkit-transform: rotate(-2deg);
     -moz-transform: rotate(-2deg);
     -ms-transform: rotate(-2deg);
@@ -182,6 +183,27 @@ img { max-height: 100%; max-width: 100%;}
 .pane.gioke .wrap {
 	top: 45%;
 }
+.pane.gioke .cartoon {
+	display: inline-block;
+	padding: 50px 30px 60px;
+	color: #6b0808;
+
+    -webkit-transform: rotate(2deg);
+    -moz-transform: rotate(2deg);
+    -ms-transform: rotate(2deg);
+    -o-transform: rotate(2deg);
+    transform: rotate(2deg);
+
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -ms-filter: blur(0px);
+    -o-filter: blur(0px);
+    filter: blur(0px);
+}
+.pane.gioke .cartoon span {position: absolute;}
+.pane.gioke .cartoon .top {top: 20px; left: 20px;}
+.pane.gioke .cartoon .bottom {bottom: 25px; right: 20px;}
+
 
 
 /* pane : penultimate */
