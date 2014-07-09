@@ -111,6 +111,7 @@ img { max-height: 100%; max-width: 100%;}
 	max-width: 3em;
 	padding: .3em 0 .7em 1.4em;
 	opacity: 1;
+	pointer-events: auto;
 
 	-webkit-transition: opacity 0.5s linear 2s;
 	-moz-transition: opacity 0.5s linear 2s;
@@ -118,7 +119,7 @@ img { max-height: 100%; max-width: 100%;}
 	-o-transition: opacity 0.5s linear 2s;
 	transition: opacity 0.5s linear 2s;
 }
-#backToTop {opacity: 0;}
+#backToTop {opacity: 0;pointer-events: none;}
 #backToTop i {
 	font-size: 2.1em;
 }
@@ -219,6 +220,7 @@ img { max-height: 100%; max-width: 100%;}
 
 
 /* slacking mobile styles */
+
 @media only screen and (max-width:1300px) {
 	.pane.end .title {font-size: 2.2em;}
 	.pane.end img {width: 500px}
