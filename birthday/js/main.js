@@ -32,7 +32,6 @@ function initialize() {
 			'width' : width - space,
 			'height' : height - ( space*2 ) - 40
 		});
-		$video.css( 'margin-top' , space );
 
 	//for width > height, var space set during instantialization
 	} else {
@@ -40,8 +39,8 @@ function initialize() {
 			'width' : width - ( space*2 ),
 			'height' : height - space - 40
 		});
-		$video.css( 'margin-top' , space/2 );
 	}
+		$video.css( 'margin-top' , space/2 );
 
 }
 
