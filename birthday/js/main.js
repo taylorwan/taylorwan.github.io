@@ -32,6 +32,7 @@ function initialize() {
 			'width' : width - space,
 			'height' : height - ( space*2 ) - 40
 		});
+		$video.css( 'margin-top' , space - 40 );
 
 	//for width > height, var space set during instantialization
 	} else {
@@ -39,8 +40,8 @@ function initialize() {
 			'width' : width - ( space*2 ),
 			'height' : height - space - 40
 		});
+		$video.css( 'margin-top' , space/2 - 40 );
 	}
-		$video.css( 'margin-top' , space/2 );
 
 }
 
@@ -71,7 +72,6 @@ function nextPane() {
 		$next.addClass( 'current' );
 		$cur.removeClass( 'current' );
 	}
-	console.log('next: ',$next);
 	$( '.main' ).attr( 'current' , $( '.pane.current' ).attr('id') );
 
 
