@@ -112,6 +112,7 @@ img { max-height: 100%; max-width: 100%;}
 	padding: .3em 0 .7em 1.4em;
 	opacity: 1;
 	pointer-events: auto;
+	text-indent: -2px;
 
 	-webkit-transition: opacity 0.5s linear 2s;
 	-moz-transition: opacity 0.5s linear 2s;
@@ -175,6 +176,8 @@ img { max-height: 100%; max-width: 100%;}
     -ms-transform: rotate(-2deg);
     -o-transform: rotate(-2deg);
     transform: rotate(-2deg);
+    /* -webkit-filter: blur(1px); */
+    /* -webkit-font-smoothing: antialiased; */
 }
 
 
