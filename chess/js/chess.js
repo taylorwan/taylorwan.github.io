@@ -5,7 +5,7 @@ $( document ).ready( function() {
 	$( window ).resize( initialize );
 
 	//moving a piece
-	$( '#move' ).click( move );
+	$( '#move' ).click( moveFromInput );
 	//atomic! (blowing up around square)
 	$( '#explode' ).click( explode );
 	//cheat: insert a piece
@@ -15,13 +15,50 @@ $( document ).ready( function() {
 	//reset board
 	$( '#reset' ).click( reset );
 
+	//click movement
+	$( '.col' ).click( function() {
+		var $active = $( '.col.active' );
+		var orig = $active.attr( 'id' );
+		var $this = $( this );
+		var cur = $this.attr( 'id' );
+
+		//square has piece
+		if ( !isEmpty( cur ) ) {
+
+			//same square is clicked
+			if ( $this.hasClass( 'active' ) ) {
+				$( '.col' ).removeClass( 'active' );
+			} else {
+
+				//dif piece clicked: if pieces have opposing colors
+				var thisColor = $this.find( '.piece' ).attr('color');
+				var origColor = $active.find( '.piece' ).attr('color');
+				if ( thisColor && origColor && thisColor !== origColor ) {
+					move( orig, cur );
+					$active.removeClass( 'active' );
+
+				//dif piece clicked: if pieces have same colors
+				} else {
+					$( '.col' ).removeClass( 'active' );
+					$this.toggleClass( 'active' );
+				}
+			}
+		}
+
+		//square empty: move a piece to this square
+		else if ( $active ) {
+			move( orig, cur );
+			$active.removeClass( 'active' );
+		}
+	});
+
 	//toggle contact module
 	$( '#contact' ).click( function() {
-		$('.contact').toggleClass('active');
+		$('.contact').toggleClass( 'active' );
 	});
 	//close contact module
 	$( '.contact .exit' ).click( function() {
-		$('.contact').removeClass('active');
+		$('.contact').removeClass( 'active' );
 	});
 
 });
@@ -78,7 +115,7 @@ function addCapture( id ) {
 
 
 //move piece from given square to new square
-function move( event ) {
+function moveFromInput( event ) {
 	event.preventDefault();
 	
 	//grab ids
@@ -101,6 +138,14 @@ function move( event ) {
 	$( '#dest' ).val( '' );
 }
 
+function move( orig , dest ) {
+	// if ( isEmpty( dest ) ) {
+		copy( orig , dest );
+	// } else {
+		// deleteAround( dest );
+	// }
+	deleteAt( orig );
+}
 
 //delete around a given square
 function explode( event ) {
@@ -181,7 +226,7 @@ function insert( event ) {
 	}
 
 	//insert & clear
-	$( '#' + id ).html( '<div class="piece ' + color + piece + '">' + fontVar + '</div>' );
+	$( '#' + id ).html( '<div class="piece ' + color + piece + '" color='+color+'>' + fontVar + '</div>' );
 	$( '#insertPlace' ).val( '' );
 	$( '#insertPiece' ).val( 'Wpawn' );
 
@@ -206,28 +251,28 @@ function reset( event ) {
 	$( '.captured .holder' ).html( '' );
 
 	//pawns
-	$( '.seven .col' ).html( '<div class="piece black pawn">o</div>' );
-	$( '.two .col' ).html( '<div class="piece white pawn">p</div>' );
+	$( '.seven .col' ).html( '<div class="piece black pawn" color="black">o</div>' );
+	$( '.two .col' ).html( '<div class="piece white pawn" color="white">p</div>' );
 	
 	//rooks
-	$( '#a8, #h8' ).html( '<div class="piece black rook">t</div>' );
-	$( '#a1, #h1' ).html( '<div class="piece white rook">r</div>' );
+	$( '#a8, #h8' ).html( '<div class="piece black rook" color="black">t</div>' );
+	$( '#a1, #h1' ).html( '<div class="piece white rook" color="white">r</div>' );
 
 	//knights
-	$( '#b8, #g8' ).html( '<div class="piece black knight">j</div>' );
-	$( '#b1, #g1' ).html( '<div class="piece white knight">h</div>' );
+	$( '#b8, #g8' ).html( '<div class="piece black knight" color="black">j</div>' );
+	$( '#b1, #g1' ).html( '<div class="piece white knight" color="white">h</div>' );
 
 	//bishops
-	$( '#c8, #f8' ).html( '<div class="piece black bishop">n</div>' );
-	$( '#c1, #f1' ).html( '<div class="piece white bishop">b</div>' );
+	$( '#c8, #f8' ).html( '<div class="piece black bishop" color="black">n</div>' );
+	$( '#c1, #f1' ).html( '<div class="piece white bishop" color="white">b</div>' );
 
 	//queens
-	$( '#d8' ).html( '<div class="piece black queen">w</div>' );
-	$( '#d1' ).html( '<div class="piece white queen">q</div>' );
+	$( '#d8' ).html( '<div class="piece black queen" color="black">w</div>' );
+	$( '#d1' ).html( '<div class="piece white queen" color="white">q</div>' );
 
 	//kings
-	$( '#e8' ).html( '<div class="piece black king">l</div>' );
-	$( '#e1' ).html( '<div class="piece white king">k</div>' );
+	$( '#e8' ).html( '<div class="piece black king" color="black">l</div>' );
+	$( '#e1' ).html( '<div class="piece white king" color="white">k</div>' );
 }
 
 
