@@ -18,9 +18,11 @@ $( document ).ready( function() {
 	//click movement
 	$( '.col' ).click( function() {
 		var $active = $( '.col.active' );
-		var orig = $active.attr( 'id' );
 		var $this = $( this );
+		var orig = $active.attr( 'id' );
 		var cur = $this.attr( 'id' );
+		var thisColor = $this.find( '.piece' ).attr( 'color' );
+		var origColor = $active.find( '.piece' ).attr( 'color' );
 
 		//square has piece
 		if ( !isEmpty( cur ) ) {
@@ -28,11 +30,9 @@ $( document ).ready( function() {
 			//same square is clicked
 			if ( $this.hasClass( 'active' ) ) {
 				$( '.col' ).removeClass( 'active' );
-			} else {
 
+			else {
 				//dif piece clicked: if pieces have opposing colors
-				var thisColor = $this.find( '.piece' ).attr('color');
-				var origColor = $active.find( '.piece' ).attr('color');
 				if ( thisColor && origColor && thisColor !== origColor ) {
 					move( orig, cur );
 					$active.removeClass( 'active' );
@@ -145,6 +145,8 @@ function move( orig , dest ) {
 		// deleteAround( dest );
 	// }
 	deleteAt( orig );
+	$( '.board[turn="white"]' ).attr( 'turn', 'black' );
+	$( '.board[turn="black"]' ).attr( 'turn', 'white' );
 }
 
 //delete around a given square
