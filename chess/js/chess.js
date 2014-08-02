@@ -30,7 +30,7 @@ $( document ).ready( function() {
 			//same square is clicked
 			if ( $this.hasClass( 'active' ) ) {
 				$( '.col' ).removeClass( 'active' );
-
+			}
 			else {
 				//dif piece clicked: if pieces have opposing colors
 				if ( thisColor && origColor && thisColor !== origColor ) {
@@ -139,6 +139,9 @@ function moveFromInput( event ) {
 }
 
 function move( orig , dest ) {
+	if ( !isEmpty( dest ) ) {
+		addCapture( dest );
+	}
 	// if ( isEmpty( dest ) ) {
 		copy( orig , dest );
 	// } else {
