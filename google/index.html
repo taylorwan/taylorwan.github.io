@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Google App - Taylor Wan</title>
+	<meta name="viewport" content="width=device-width, initial-scale=0.6, user-scalable=no">
+	<link rel="icon" type="image/ico" href="img/icon.png"/>
+	<script type="text/javascript">
+		function page_Load() {
+			setTimeout(function() { window.scrollTo(0, 1); }, 100);
+	  	}
+	</script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script><style type="text/css"></style>
+	<script type="text/javascript" src="js/main.js"></script>
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<!-- header-->
+	<header>
+		<div class="wrap">
+			<div class="logo">
+				<img src="img/logo.png" >
+				<span>app</span>
+			</div>
+			<ul class="directive">
+				<li id="intro">
+					Intro
+				</li>
+				<li id="about">
+					About
+				</li>
+				<li id="map">
+					Explore
+				</li>
+				<li id="glimpse">
+					Glimpse
+				</li>
+				<li id="why">
+					Why Google?
+				</li>
+				<li id="contact">
+					Contact
+				</li>
+				<!--li id="">
+					
+				</li-->
+			</ul>
+		</div>
+	</header><!-- end header-->
+
+
+	<!-- main -->
+	<div class="main">
+
+		<!-- intro -->
+		<section class="pane intro" label="intro">
+			<div class="wrap">
+				<div class="content right">
+					<h1>Hi! I'm Taylor, and I want to intern at
+						<span class="google">
+							<span class="bold blue">G</span>
+							<span class="bold red">o</span>
+							<span class="bold yellow">o</span>
+							<span class="bold blue">g</span>
+							<span class="bold green">l</span>
+							<span class="bold red">e</span>
+						</span>
+					</h1>
+				</div>
+
+				<div class="arrow">
+					<i class="fa fa-angle-down"></i>
+				</div>
+			</div>
+		</section>
+
+
+		<!-- about -->
+		<section class="pane about" label="about">
+			<div class="wrap">
+				<div class="content">
+					<h1>About</h1>
+					<h3 class="light">Who, me?</h3>
+					<div class="textbox">
+						<p>Sophomore studying Computer Science @ Georgetown Univeristy</p>
+						<p>Music lover // hobbyist photographer</p>
+						<p>Can be found coding or reading in cozy coffee shops // watching street performers in Washington Square Park // attending open mics at Busboys &amp; Poets // and always laughing</p>
+						<p>Occasionally found recording song covers // making websites // arranging music // playing chess // or doing photoshoots</p>
+					</div>
+				</div>
+
+				<div class="caption">
+					<span class="title">Walt Doesn't Sleep</span>
+					<span class="place">New York, NY</span>
+					<span class="date">December 31, 2010</span>
+				</div>
+
+				<div class="arrow">
+					<i class="fa fa-angle-down"></i>
+				</div>
+			</div>
+		</section>
+
+
+		<!-- explore -->
+		<section class="pane map" label="map">
+			<div class="wrap">
+				<iframe src="https://mapsengine.google.com/map/u/0/embed?mid=zMDbJNohdfk0.kRytxkgJiWAg" width="100%" height="480"></iframe>
+
+				<div class="nav-helper">
+					explore
+					<img src="img/arrow.png" />
+				</div>
+				<div class="scroll-helper">
+					scroll here <i class="fa fa-arrows-v"></i>
+				</div>
+				<!--div class="scroll-delay active"></div-->
+			</div>
+		</section>
+
+
+		<!-- glimpse -->
+		<section class="pane glimpse" label="glimpse">
+			<div class="wrap">
+				<div class="content">
+					<h1>Glimpse</h1>
+					<h3 class="light">Splash, Summer 2013: Front-End Web Development</h3>
+				</div>
+
+				<div class="sites">
+					<div class="site-holder" id="fashionweek">
+						<a href="http://splashfashionweek.splashthat.com/" target="_blank">
+							<div class="img-holder">
+								<img src="img/fashionweek.jpg" />
+							</div>
+							<div class="description">
+								<span class="title">Fashion Week</span>
+								<span class="deets">Implementation</span>
+							</div>
+						</a>
+					</div>
+					<div class="site-holder" id="halloffame">
+						<a href="http://splashthat.com/halloffame/" target="_blank">
+							<div class="img-holder">
+								<img src="img/halloffame.jpg" />
+							</div>
+							<div class="description">
+								<span class="title">Hall of Fame</span>
+								<span class="deets">Design &amp; Implementation</span>
+							</div>
+						</a>
+					</div>
+					<div class="site-holder" id="pivot">
+						<a href="http://pivotsf.splashthat.com/" target="_blank">
+							<div class="img-holder">
+								<img src="img/pivot.jpg" />
+							</div>
+							<div class="description">
+								<span class="title">Pivot</span>
+								<span class="deets">Mobile Responsiveness</span>
+							</div>
+						</a>
+					</div>
+				</div>
+
+				<div class="caption">
+					<span class="title">There's Space in Atlanta</span>
+					<span class="place">Atlanta, Georgia</span>
+					<span class="date">April 7, 2012</span>
+				</div>
+			</div>
+		</section>
+
+
+		<!-- why google -->
+		<section class="pane why" label="why">
+			<div class="wrap">
+				<div class="content">
+					<h1>Why Google?</h1>
+					<h3 class="light">Let's change lives</h3>
+					<div class="textbox">
+						<p>In middle school, I was asked to give a presentation on my dream job. Back then, I wanted to be a writer. Consequently, as a 6th grader, I scoured the Google Jobs site, and decided that I wanted to be a technical writer.</p>
+						<p>Looking back, it seems strange that I would search for a writing job at a company like Google. I remember my reasons for choosing the job: a creative, interactive, and innovative atmosphere, and highly motivated peers.</p>
+						<p>While I do still admire these qualities, I&apos;ve come to realize that I chose Google because I wanted to make an impact, the way Google has impacted me. Google provides the most versatile, powerful, and incredibly &quot;simple&quot; services, without which so many aspects of my life would be compromised.</p>
+						<p>So, why Google? Because I want to help create new tools that streamline daily processes, and contribute to the extraordinary impact Google makes on everyday lives.</p>
+					</div>
+				</div>
+
+				<div class="caption">
+					<span class="title">Home</span>
+					<span class="place">New York, NY</span>
+					<span class="date">April 29, 2011</span>
+				</div>
+			</div>
+		</section>
+
+
+		<!-- contact -->
+		<section class="pane contact" label="contact">
+			<div class="wrap">
+				<div class="content">
+					<h1>Send Me a Note!</h1>
+					<h2 class="light">Whenever, wherever, how-ever</h2>
+					<ul class="blob">
+						<li class="email">
+							<span class="light">email:</span> tongwan94@gmail.com
+						</li>
+						<li class="phone">
+							<span class="light">phone:</span> 212.574.4453
+						</li>
+						<li class="address">
+							<span class="light">address:</span>
+							<span>1813 Pilgrim Ave</span>
+							<span>Bronx, NY 10461</span>
+						</li>
+					</ul>
+				</div>
+
+				<div class="caption">
+					<span class="title">7 ate 9</span>
+					<span class="place">Emporia, Virginia</span>
+					<span class="date">August 24, 2011</span>
+				</div>
+				<div id="backTop">
+					<i class="fa fa-angle-up"></i> top
+				</div>
+			</div>
+		</section>
+
+
+	</div><!-- end main-->
+
+	<footer>
+		<div class="wrap">
+			<ul class="social-links">
+				<li id="linkedin">
+					<a href="http://www.linkedin.com/pub/taylor-wan/24/48a/10/" target="_blank">
+						<i class="fa fa-linkedin-square"></i>
+					</a>
+				</li>
+				<li id="github">
+					<a href="https://github.com/taylorwan" target="_blank">
+						<i class="fa fa-github-square"></i>
+					</a>
+				</li>
+				<li id="youtube">
+					<a href="http://www.youtube.com/tongsmusic" target="_blank">
+						<i class="fa fa-youtube-square"></i>
+					</a>
+				</li>
+			</ul>
+			<div class="me">Taylor Wan &copy; 2013</div>
+		</div>
+	</footer>
+
+</body>
+</html>
