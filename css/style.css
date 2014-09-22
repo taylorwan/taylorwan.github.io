@@ -49,6 +49,7 @@ a {text-decoration: none;}
 }
 
 #resume a {color: #b8b8b8;}
+#songwritr a {color: #bababa;}
 #birthday a {color: #bdbdbd;}
 #halloffame a {color: #ccc;}
 #atomic a {color: #ddd;}
@@ -56,6 +57,7 @@ a {text-decoration: none;}
 
 .links a:hover {padding-left: 3px;}
 #resume a:hover {color: #888;}
+#songwritr a:hover {color: #8a8a8a;}
 #birthday a:hover {color: #8f8f8f;}
 #halloffame a:hover {color: #9c9c9c;}
 #atomic a:hover {color: #adadad;}
