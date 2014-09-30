@@ -353,6 +353,7 @@ header .directive li:hover {
     width: 580px;
     margin: 0 auto;
     top: 50px !important;
+    padding-bottom: 50px;
     text-align: center;
     background: none;
 }
@@ -373,7 +374,7 @@ header .directive li:hover {
     margin: 15px 1% 0;
 }
 
-.glimpse #halloffame {
+.glimpse #tales {
     width: 34%;
     margin-top: 0;
 }
