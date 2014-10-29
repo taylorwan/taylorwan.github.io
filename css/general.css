@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'FontAwesome';
+    src: url("../fonts/fontawesome.otf"),
+        url("../fonts/fontawesome-webfont.eot"),
+        url("../fonts/fontawesome-webfont.svg"),
+        url("../fonts/fontawesome-webfont.ttf"),
+        url("../fonts/fontawesome-webfont.woff");
+}
+
+/* --- general styles --- */
+
+body {
+    font: 14px/1.22 Helvetica, Arial, sans-serif;
+    color: #666;
+}
+.wrap {
+    margin: 0 40px;
+}
+
+h1 {font-size: 42px;}
+h2 {font-size: 32px;}
+h3 {font-size: 24px;}
+h4 {font-size: 16px;}
+p {font-size: 15px; margin-bottom: 8px;}
+
+i {font-family: FontAwesome;}
+
+ul, ol {list-style: none;}
+
+.light{opacity: .8;}
+
+a {text-decoration:none;}
+:hover {
+    transition: all linear .2s;
+    -webkit-transition: all linear .2s;
+    -moz-transition: all linear .2s;
+    -ms-transition: all linear .2s;
+    -o-transition: all linear .2s;
+}

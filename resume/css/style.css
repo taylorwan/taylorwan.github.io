@@ -1,0 +1,620 @@
+@font-face {
+    font-family: 'OpenSansLight';
+    src: url('../fonts/OpenSans-Light-webfont.eot') format('embedded-opentype'),
+         url('../fonts/OpenSans-Light-webfont.svg') format('svg'),
+         url('../fonts/OpenSans-Light-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Light-webfont.woff') format('woff');
+}
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../fonts/OpenSans-Regular-webfont.eot') format('embedded-opentype'),
+         url('../fonts/OpenSans-Regular-webfont.svg') format('svg'),
+         url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Regular-webfont.woff') format('woff');
+}
+@font-face {
+    font-family: 'OpenSansItalic';
+    src: url('../fonts/OpenSans-Italic-webfont.eot') format('embedded-opentype'),
+         url('../fonts/OpenSans-Italic-webfont.svg') format('svg'),
+         url('../fonts/OpenSans-Italic-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Italic-webfont.woff') format('woff');
+}
+@font-face {
+    font-family: 'OpenSansSemiBold';
+    src: url('../fonts/OpenSans-Semibold-webfont.eot') format('embedded-opentype'),
+         url('../fonts/OpenSans-Semibold-webfont.svg') format('svg'),
+         url('../fonts/OpenSans-Semibold-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Semibold-webfont.woff') format('woff');
+}
+@font-face {
+    font-family: 'OpenSansBold';
+    src: url('../fonts/OpenSans-Bold-webfont.eot') format('embedded-opentype'),
+         url('../fonts/OpenSans-Bold-webfont.svg') format('svg'),
+         url('../fonts/OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Bold-webfont.woff') format('woff');
+}
+@font-face {
+    font-family: 'OpenSansLightItalic';
+    src: url('../fonts/OpenSans-LightItalic-webfont.eot') format('embedded-opentype'),
+         url('../fonts/OpenSans-LightItalic-webfont.svg') format('svg'),
+         url('../fonts/OpenSans-LightItalic-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-LightItalic-webfont.woff') format('woff');
+}
+@font-face {
+    font-family: 'FontAwesome';
+    src: url("../../fonts/fontawesome.otf"),
+        url("../../fonts/fontawesome-webfont.eot"),
+        url("../../fonts/fontawesome-webfont.svg"),
+        url("../../fonts/fontawesome-webfont.ttf"),
+        url("../../fonts/fontawesome-webfont.woff");
+}
+
+
+
+/* --- general styles --- */
+
+body {
+    font: 13px/1.22 OpenSans, Helvetica, Arial, sans-serif;
+    color: #666;
+    min-width: 500px;
+}
+
+.main {
+    position: relative;
+    top: 61px;
+}
+
+.wrap {
+    margin: 0 40px;
+}
+
+h1 {font-size: 42px;}
+h2 {font-size: 32px;}
+h3 {font-size: 24px;}
+h4 {font-size: 16px;}
+p {font-size: 15px;margin-bottom: 8px;}
+
+i {font-family: FontAwesome;}
+
+.light{opacity: .8;}
+
+a {text-decoration:none;}
+a:hover {
+    transition: all linear .2s;
+    -webkit-transition: all linear .2s;
+    -moz-transition: all linear .2s;
+    -ms-transition: all linear .2s;
+    -o-transition: all linear .2s;
+}
+
+
+/* --- header --- */
+
+header {
+    position: fixed;
+    z-index: 30;
+    width: 100%;
+    height: 40px;
+    padding: 10px 0;
+    background: #fff;
+    box-shadow: 0 0 10px #888;
+    border-bottom: 1px dashed #ccc;
+}
+
+header .logo {
+    color: rgb(68, 123, 223);
+    float: left;
+    height: 40px;
+    font: 24px/40px OpenSansItalic, Helvetica, Arial, sans-serif;
+    font-style: italic;
+    letter-spacing: -1px;
+}
+
+header .logo img {
+    height: 100%;
+}
+
+header .logo span {
+    position: relative;
+    color: #888;
+    font: 19px/40px OpenSansLight, Helvetica, Arial, sans-serif;
+}
+
+header .directive {
+    float: right;
+    position: relative;
+    top: 8px;
+}
+
+header .directive li {
+    float: left;
+    margin-left: 20px;
+    font: 16px/24px OpenSansLight, Helvetica, Arial, sans-serif;
+    color: #777;
+}
+
+header .directive li.active {
+    color: #444;
+    border-bottom: 1px solid #666;
+    cursor: pointer;
+}
+
+header .directive li:hover {
+    color: #444;
+    border-bottom: 1px dashed #666;
+    cursor: pointer;
+}
+
+
+
+/* --- panes --- */
+
+.pane {
+    min-height: 300px;
+    background: #eee;
+    margin-bottom: 5px;
+    position: relative;
+    background-size: cover !important;
+    overflow: hidden;
+}
+
+.pane .content {
+    color: #eee;
+    width: 40%;
+    padding: 30px;
+    position: relative;
+    top: 100px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.pane .textbox {
+    margin-top: 15px;
+}
+
+
+.pane .caption {
+    position: absolute;
+    bottom: 0px;
+    left:0;
+    font: 11px/1.22 OpenSansLightItalic, Helvetica, Arial, sans-serif;
+    font-style: italic;
+    color: #eee;
+    padding: 10px;
+}
+
+.pane .caption .title {
+    font-family: OpenSansSemiBold, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+}
+
+.pane .caption .title:after {
+    content: ' //';
+}
+
+.pane .caption .place:after {
+    content: ',';
+}
+
+
+.pane .arrow {
+    position: absolute;
+    bottom: 0px;
+    right: 80px;
+    width: 120px;
+    text-align: center;
+    color: #eee;
+    font-size: 84px;
+
+    animation: arrowBounce 2s ease-in-out infinite;
+    -webkit-animation: arrowBounce 2s ease-in-out infinite; 
+    -moz-animation: arrowBounce 2s ease-in-out infinite;
+    -ms-animation: arrowBounce 2s ease-in-out infinite;
+    -o-animation: arrowBounce 2s ease-in-out infinite;
+}
+
+@keyframes arrowBounce { 0% { opacity: 1; bottom: 15px; } 50% { bottom: 1px; } 80% { bottom: 0px; opacity: 0; } 85% { bottom: 25px; opacity: 0; } 95% { bottom: 15px; opacity: .9; } 100% { bottom: 15px; opacity: 1; } }
+@-webkit-keyframes arrowBounce { 0% { opacity: 1; bottom: 15px; } 50% { bottom: 1px; } 80% { bottom: 0px; opacity: 0; } 85% { bottom: 25px; opacity: 0; } 95% { bottom: 15px; opacity: .9; } 100% { bottom: 15px; opacity: 1; } }
+@-moz-keyframes arrowBounce { 0% { opacity: 1; bottom: 15px; } 50% { bottom: 1px; } 80% { bottom: 0px; opacity: 0; } 85% { bottom: 25px; opacity: 0; } 95% { bottom: 15px; opacity: .9; } 100% { bottom: 15px; opacity: 1; } }
+@-ms-keyframes arrowBounce { 0% { opacity: 1; bottom: 15px; } 50% { bottom: 1px; } 80% { bottom: 0px; opacity: 0; } 85% { bottom: 25px; opacity: 0; } 95% { bottom: 15px; opacity: .9; } 100% { bottom: 15px; opacity: 1; } }
+@-o-keyframes arrowBounce { 0% { opacity: 1; bottom: 15px; } 50% { bottom: 1px; } 80% { bottom: 0px; opacity: 0; } 85% { bottom: 25px; opacity: 0; } 95% { bottom: 15px; opacity: .9; } 100% { bottom: 15px; opacity: 1; } }
+
+
+/* --- pane : intro --- */
+
+.intro {
+    background: url(../img/intro.jpg) center center no-repeat;
+}
+
+.intro .content {
+    float: right;
+    padding: 30px 30px 30px 40px;
+}
+
+.intro .splash {
+    color: rgb(192, 192, 67);
+    text-shadow: 1px 1px rgba(255,255, 255, 0.5);
+}
+
+
+/* --- pane : about --- */
+
+.about {
+    background: url(../img/coffee.jpg) center 60% no-repeat;
+}
+
+.about .content {
+    top: 60px;
+    padding-bottom: 40px;
+}
+
+.about .caption {
+    background: rgba(24, 17, 9, 0.3);
+    
+}
+
+/* --- pane : map --- */
+
+.map .wrap {
+    margin: 0;
+}
+
+.map .nav-helper {
+    position: absolute;
+    top: 70px;
+    left: 310px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px 10px 15px;
+    border-radius: 50%;
+    color: #eee;
+    font-size: 20px;
+    text-align: center;
+    z-index: 2;
+
+    transition: all linear .15s;
+    -webkit-transition: all linear .15s;
+    -moz-transition: all linear .15s;
+    -ms-transition: all linear .15s;
+    -o-transition: all linear .15s;
+}
+
+.map .nav-helper:hover {
+    cursor: pointer;
+    box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.6);
+    opacity: 0.95;
+}
+
+.map .nav-helper.inactive {
+    font-size: 15px;
+    left: 200px;
+    padding: 20px 0 10px;
+    pointer-events: none;
+    background: #fff;
+    box-shadow: 0 0 0 50px rgba(100, 100, 100, 0.3) inset;
+}
+
+.map .nav-helper img {
+    display: block;
+    margin-left: 30%;
+    width: 50%;
+}
+
+.map .scroll-helper {
+    font: 32px/1.22 OpenSansLight, Helvetica, Arial, sans-serif;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    color: #eee;
+    position: absolute;
+    width: 120px;
+    right: 80px;
+    padding: 40px 0;
+    top: 0;
+    bottom: 0;
+}
+
+.map .scroll-delay {
+    position: absolute;
+    left: 305px;
+    top: 0;
+    right: 0;
+}
+
+.map .scroll-delay.active {
+    bottom: 0;
+}
+
+.map .scroll-helper i {
+    font-size: 84px;
+    margin-top: 20px;
+    opacity: 0.8;
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -18px;
+}
+
+.map .scroll-helper.bottom i {
+    bottom: 20px;
+}
+
+.map iframe {
+    display: block;
+    float: right;
+    z-index: -1;
+}
+
+
+/* --- pane : glimpse --- */
+
+.glimpse {
+    background: url(../img/escalate.jpg) center 30% no-repeat;
+}
+
+.glimpse .content {
+    width: 580px;
+    margin: 0 auto;
+    top: 50px !important;
+    padding-bottom: 50px;
+    text-align: center;
+    background: none;
+}
+
+.glimpse .content h3 {
+    margin: 5px 0;
+}
+
+.glimpse .sites {
+    margin: 50px auto 0;
+    width: 90%;
+    max-width: 1400px;
+}
+
+.glimpse .site-holder {
+    width:30%;
+    float:left;
+    margin: 15px 1% 0;
+}
+
+.glimpse #tales {
+    width: 34%;
+    margin-top: 0;
+}
+
+.glimpse .site-holder .img-holder {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.glimpse .site-holder a img {
+    width: 100%;
+    display: block;
+    opacity: 0.9;
+
+    transition: all linear .15s;
+    -webkit-transition: all linear .15s;
+    -moz-transition: all linear .15s;
+    -ms-transition: all linear .15s;
+    -o-transition: all linear .15s;
+}
+
+.glimpse .site-holder a:hover img {
+    opacity: 1;
+}
+
+.glimpse .site-holder .description {
+    color: #eee;
+    font-size: 16px;
+    background: rgba(0, 0, 0, 0.6);
+    margin-top: 10px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.glimpse .site-holder .description span {
+    display: block;
+}
+
+.glimpse .caption {
+    background: rgba(34, 33, 31, 0.4);
+}
+
+
+/* --- pane : why --- */
+
+.why {
+    background: url(../img/ny.jpg) center 10% no-repeat;
+}
+
+.why .content {
+    background: rgba(0, 0, 10, 0.6);
+    color: #fff;
+}
+
+.why .caption {
+    background: rgba(23, 23, 37, 0.5);
+}
+
+
+/* --- pane : contact --- */
+
+.contact {
+    background: url(../img/mailbox.jpg) center center no-repeat;
+    margin-bottom: 61px;
+}
+
+.contact .content ul {
+    margin-top: 15px;
+}
+
+.contact .content li {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.contact .content .address .light {
+    margin-bottom: 3px;
+}
+
+.contact .content .address span {
+    display: block;
+}
+
+.contact .caption {
+    background: rgba(170, 170, 180, 0.2);
+}
+
+.contact #backTop {
+    position: absolute;
+    bottom: 300px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 20px;
+    text-align: center;
+    color: #d9d9d9;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.contact #backTop i {
+    display: block;
+    font-size: 50px;
+    line-height: 27px;
+}
+
+
+
+/* --- footer --- */
+
+footer {
+    height: 40px;
+    padding: 10px 0;
+    background: #fff;
+    box-shadow: 0 0 10px #888;
+    border-top: 1px dashed #ccc;
+    position: relative;
+    bottom: 0;
+}
+
+footer .social-links {
+    width: 100%;
+}
+
+footer .social-links li {
+    float: left;
+    margin-right: 10px;
+}
+
+footer .social-links a {
+    font: 28px/40px FontAwesome;
+    color: #666;
+}
+
+footer .social-links #linkedin a:hover {
+    color: #0e76a8;
+}
+
+footer .social-links #github a:hover {
+    color: #171515;
+}
+
+footer .social-links #youtube a:hover {
+    color: #c4302b;
+}
+
+footer .me {
+    float: right;
+    line-height: 40px;
+}
+
+
+/* --------
+ * RESPONSIVENESS
+ *       -------- */
+
+
+/* --- normal laptop sizes --- */
+
+@media only screen and (max-width: 1450px) {
+    
+    .glimpse {background: url(../img/escalate.jpg) center 40% no-repeat;}
+
+}
+
+@media only screen and (max-width: 1250px) {
+    
+    .pane .arrow {width:100px; font-size:80px;}
+    .map .scroll-helper {width:100px; font-size:28px;}
+    .map .scroll-helper i {font-size: 80px; margin-left: -16px;}
+
+    .glimpse {background: url(../img/escalate.jpg) center center no-repeat;}
+    .glimpse .content {background: rgba(0, 0, 0, 0.5); width: auto;}
+    
+}
+
+@media only screen and (max-width: 1100px) {
+    
+    h1 {font-size: 36px !important;}
+    h2 {font-size: 26px;}
+    h3 {font-size: 20px;}
+    h4 {font-size: 15px;}
+    .glimpse .site-holder .description {font-size:15px;}
+    p {font-size: 14px; margin-bottom: 6px;}
+    
+/*    header,
+    header .logo {height: 30px;}*/
+    header .logo span {font-size: 20px;}
+    header .directive li {margin-left: 16px; font-size: 14px !important; line-height: 24px !important;}
+    
+    /*.main {top: 51px;}*/
+    .pane .content {width:50%;}
+    .intro .content {width:40%;}
+    
+    .pane .arrow {width:90px; font-size:72px;}
+    .map .scroll-helper {width:90px; font-size:26px;}
+    .map .scroll-helper i {font-size: 72px; margin-left: -16px;}
+/*  
+    .contact {margin-bottom:51px;}
+
+    footer {height:30px;}
+    footer .social-links a {line-height:30px;}
+    footer .me {line-height:30px;}*/
+
+}
+
+
+/* --- older laptops, smaller screens --- */
+
+@media only screen and (max-width: 900px) {
+    header .directive #map {display:none;}
+    .map {display:none;}
+}
+
+@media only screen and (max-width: 700px) {
+    
+    h1 {font-size: 34px !important;}
+    h2 {font-size: 26px;}
+    h3 {font-size: 20px;}
+    h4 {font-size: 14px;}
+    .glimpse .site-holder .description {font-size:14px;}
+    p {font-size: 13px;}
+    
+    header .directive #intro {display:none;}
+    
+    .pane .content {width:60%;}
+    .intro .content {width:40%;}
+    .pane .arrow {right:50px;}
+    
+}
+
+@media only screen and (max-width: 600px) {
+    
+    header .directive li {margin-left: 10px; font-size: 13px !important;}
+
+    .wrap {margin:0 20px;}
+    .contact #backTop {right:20px;}
+
+    .pane .content {width:70%;}
+    .intro .content {width:40%;}
+    
+}

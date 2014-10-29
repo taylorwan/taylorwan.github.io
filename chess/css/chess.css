@@ -1,0 +1,389 @@
+@font-face {
+    font-family: 'Chess';
+    src: url('../fonts/chess-webfont.eot') format('embedded-opentype'),
+         url('../fonts/chess-webfont.svg') format('svg'),
+         url('../fonts/chess-webfont.ttf') format('truetype'),
+         url('../fonts/chess-webfont.woff') format('woff');
+}
+
+/* --- general styles --- */
+
+body {
+    font: 13px/1.22 Helvetica, Arial, sans-serif;
+    text-transform: lowercase;
+    color: #666;
+    min-width: 500px;
+    background: #fcfcfc;
+    overflow-x: hidden;
+}
+
+.main {
+    position: absolute;
+    padding: 20px 0;
+    left: 50%;
+    margin-left: -270px;
+}
+
+.wrap {
+    margin: 0 30px;
+}
+
+h1 {font-size: 42px;}
+h2 {font-size: 32px;}
+h3 {font-size: 26px;}
+h4 {font-size: 18px;}
+p {font-size: 15px;margin-bottom: 8px;}
+
+i {font-family: FontAwesome;}
+
+.light{opacity: 0.7;}
+
+a {text-decoration:none; color: #ddd;}
+
+:hover {
+    transition: all linear .2s;
+    -webkit-transition: all linear .2s;
+    -moz-transition: all linear .2s;
+    -ms-transition: all linear .2s;
+    -o-transition: all linear .2s;
+}
+
+
+/* --- sidebars --- */
+
+.righty, .lefty {
+    position: fixed;
+    width: 25%;
+    padding: 10px 0;
+    color: #888;
+    top: 0;
+    bottom: 0;
+    max-width: 320px;
+}
+
+.righty {
+    right: 0;
+    text-align: right;
+}
+
+.middle {
+    margin-top: 40%;
+}
+
+
+/* --- sidebar: left header --- */
+
+.logo {
+    font-size: 20px;
+}
+
+.rules {
+    margin-left: 15px;
+    list-style: decimal;
+}
+.rules li {
+    margin: 7px 0;
+}
+.rules h4 {
+    margin-left: -15px;
+}
+
+
+/* --- sidebar: right header --- */
+
+.directive {
+    overflow: hidden;
+}
+
+.directive li {
+    float: right;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.directive li.active {
+    color: #444;
+    cursor: pointer;
+}
+
+.directive li:hover {
+    color: #444;
+    cursor: pointer;
+}
+
+
+.captured {
+    padding-top: 10px;
+}
+.captured .holder {
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.captured .piece {
+    float: none;
+    display: inline-block;
+    font-size: 30px;
+    width: auto;
+    line-height: 30px;
+    padding: 0 4px;
+    letter-spacing: -8px;
+}
+.captured .pawn {padding: 0;}
+
+
+.footer {
+    position: absolute;
+    bottom: 15px;
+    right: 30px;
+}
+
+
+
+/* --- board styles --- */
+
+.board {
+    width: 480px;
+    margin: 0 0 0 5px;
+    border: 1px solid rgba(0,0,0,.1);
+    background: rgba(0,0,0,.1);
+    position: relative;
+}
+
+.board .label {
+    position: absolute;
+    margin-left: -17px;
+    font-size: 16px;
+    line-height: 60px;
+}
+.board .zero .label {
+    position: relative;
+    margin-left: 0;
+    line-height: 30px;
+    float: left;
+    width: 60px;
+    text-align: center;
+}
+
+.row {
+    clear: both;
+    overflow: hidden;
+}
+.row:nth-child(even) .col:nth-child(even),
+.row:nth-child(odd) .col:nth-child(odd) {
+    background: rgba(0,0,0,.4);
+}
+
+.col {
+    float: left;
+    height: 60px;
+    width: 60px;
+}
+.col.active {
+    background: rgba(154, 240, 247, 1) !important;
+}
+
+
+
+/* --- pieces --- */
+
+.pieces {
+    position: absolute;
+}
+
+.piece {
+    width: 60px;
+    text-align: center;
+    font: 60px/1 chess;
+    color: #444;
+}
+.piece:hover {
+    cursor: pointer;
+}
+
+
+
+/* --- interactives --- */
+
+.interactives {
+    clear: both;
+    font-size: 15px;
+    line-height: 1.22;
+    text-align: center;
+    overflow: hidden;
+    width: 480px;
+    margin: 0 auto;
+    position: relative;
+    top: 10px;
+    letter-spacing: -0.5px;
+    padding-left: 5px;
+}
+
+.box {
+    padding: 10px 20px;
+    border: 1px dashed #ddd;
+    float: left;
+    width: 198px;
+}
+.inserter {padding: 21px 20px;}
+.reseter {padding: 0 20px 9px;}
+
+.box span {
+    display: block;
+    white-space: nowrap;
+}
+
+input {
+    margin: 0 3px;
+    width: 15px;
+}
+button {
+    border: none;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+    background: #888;
+    color: #fff;
+    border-radius: 3px;
+    padding: 5px 8px;
+    display: block;
+    margin: 10px auto 0;
+}
+button:hover {
+    cursor: pointer;
+    background: #777;
+}
+
+
+
+/* --- contact --- */
+
+.contact {
+    width: 175px;
+    padding: 0px 10px 27px 50px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #eee;
+    position: fixed;
+    top: -85px;
+    right: -7px;
+    opacity: 0;
+    border-bottom-left-radius: 30%;
+    
+    box-shadow: 9px 4px 12px rgba(0, 0, 0, 0.4);
+    transform: rotate(8deg);
+    -webkit-transform: rotate(8deg);
+    -moz-transform: rotate(8deg);
+    -ms-transform: rotate(8deg);
+    -o-transform: rotate(8deg);
+
+    transition: all linear .2s;
+    -webkit-transition: all linear .2s;
+    -moz-transition: all linear .2s;
+    -ms-transition: all linear .2s;
+    -o-transition: all linear .2s;
+}
+.contact.active {
+    top: 25px;
+    opacity: 1;
+    padding-top: 22px;
+}
+
+.contact .exit:before {content: '\2717';}
+.contact .exit {
+    position: absolute;
+    padding: 15px 10px;
+    top: 3px;
+    left: 3px;
+    font-size: 24px;
+    line-height: 0;
+}
+.contact .exit:hover {cursor: pointer;}
+
+.contact h4 {
+    margin-left: 14px;
+}
+
+
+
+/* --- footer --- */
+
+footer {
+    margin-top: -20px;
+    padding: 0 0 15px;
+}
+
+footer .me {
+    font-size: 10px;
+    text-align: right;
+}
+
+
+/* --------
+ * RESPONSIVENESS
+ *       -------- */
+
+/* --- regular laptop size --- */
+
+@media only screen and (max-width: 1100px) {
+    
+    .main {margin-left: -230px;}
+    
+    .board {width: 400px;}
+    .col {width: 50px; height: 50px;}
+    .board .label {line-height: 50px; font-size: 15px;}
+    .board .zero .label {width: 50px;}
+    .piece {font-size: 50px; width: 50px;}
+    
+    .interactives {width: 400px;}
+    .box {width: 158px;}
+
+}
+
+/* --- older laptops, smaller screens --- */
+
+@media only screen and (max-width: 850px) {
+    
+    .main {top:40px;}
+    
+    .righty, .lefty {bottom: auto; width: auto;}
+    .middle {display: none;}
+    .footer {position: fixed;}
+}
+
+
+@media only screen and (max-width: 550px) {
+    
+    body {font-size: 12px;}
+    h4 {font-size: 16px;}
+    
+    .main {left: 50%; margin-left: -200px;}
+    
+    .board {width: 320px;}
+    .col {width: 40px; height: 40px;}
+    .board .label {line-height: 40px; font-size: 15px;}
+    .board .zero .label {width: 40px;}
+    .piece {font-size: 40px; width: 40px;}
+    
+    .interactives {width: 320px; font-size: 13px;}
+    .box {width: 138px; padding: 10px 10px;}
+    .inserter {padding: 14px 10px;}
+    .reseter {padding: 0 10px 11px;}
+    button {font-size: 10px;}
+}
+
+@media only screen and (max-width: 420px) {
+    
+    .wrap {margin: 0 20px;}
+    .main {margin-left: -160px;}
+    
+    .board {width: 280px;}
+    .col {width: 35px; height: 35px;}
+    .board .label {line-height: 35px; font-size: 14px;}
+    .board .zero .label {width: 35px;}
+    .piece {font-size: 35px; width: 35px;}
+    
+    .interactives {width: 280px; font-size: 12px;}
+    .box {width: 128px; padding: 10px 5px;}
+    .inserter {padding: 14px 5px;}
+    .reseter {padding: 0 5px 11px;}
+    button {font-size: 10px;}
+}

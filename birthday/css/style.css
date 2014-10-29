@@ -1,0 +1,274 @@
+/* fonts */
+
+@import url(http://fonts.googleapis.com/css?family=Comfortaa);
+
+@font-face {
+    font-family: 'FontAwesome';
+    src: url("../../fonts/fontawesome.otf"),
+        url("../../fonts/fontawesome-webfont.eot"),
+        url("../../fonts/fontawesome-webfont.svg"),
+        url("../../fonts/fontawesome-webfont.ttf"),
+        url("../../fonts/fontawesome-webfont.woff");
+}
+
+
+
+/* general on-page styles */
+
+body {
+	margin: 0;
+	font-family: 'Comfortaa', helvetica, sans-serif;
+	font-size: 1.3em;
+	color: #222;
+	background: url(../img/stripes.jpg);
+}
+
+h1 {margin: 0;}
+i {font-family: FontAwesome;}
+ul {list-style: none; padding: 0; margin: 0; }
+
+a {text-decoration: none;}
+a:hover {cursor: pointer;}
+
+img { max-height: 100%; max-width: 100%;}
+
+.vertical-centering {
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+
+
+/* viewport setup */
+
+.main {
+	overflow: hidden;
+	background: #fff;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	right: 20px;
+	bottom: 20px;
+}
+
+.content {
+	position: relative;
+	top: 0;
+
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+.pane {
+	overflow: hidden;
+	position: relative;
+}
+
+
+
+/* scroll tools setup */
+
+#scrollTools, #backToTop {
+    position: fixed;
+    right: 20px;
+    border-bottom-left-radius: 40%;
+    border-top-left-radius: 40%;
+    overflow: hidden;
+}
+
+#scrollTools .scrollTool, #backToTop {
+    font-size: 2.2em;
+    color: #fff;
+    background: #ddd;
+    padding: 0.2em 0.3em;
+    padding-left: 0.6em;
+    line-height: 1;
+
+	-webkit-transition: all 0.05s linear;
+	-moz-transition: all 0.05s linear;
+	-ms-transition: all 0.05s linear;
+	-o-transition: all 0.05s linear;
+	transition: all 0.05s linear;
+}
+
+#scrollTools .scrollTool:hover, #backToTop:hover {
+	cursor: pointer;
+	background: #E9E9E9;
+}
+
+.main[current="intro"] #scrollTools, .main[current="end"] #scrollTools {display: none;}
+
+.pane.end.current #backToTop {
+	font-size: 1em;
+	max-width: 3em;
+	padding: .3em 0 .7em 1.4em;
+	opacity: 1;
+	pointer-events: auto;
+	text-indent: -2px;
+
+	-webkit-transition: opacity 0.5s linear 2s;
+	-moz-transition: opacity 0.5s linear 2s;
+	-ms-transition: opacity 0.5s linear 2s;
+	-o-transition: opacity 0.5s linear 2s;
+	transition: opacity 0.5s linear 2s;
+}
+#backToTop {opacity: 0;pointer-events: none;}
+#backToTop i {
+	font-size: 2.1em;
+}
+
+
+
+/* panes */
+
+.wrap {
+	margin: 0 40px;
+	text-align: center;
+}
+
+.pane a {
+	display: block;
+	text-align: center;
+	height: 100%;
+	color: inherit;
+}
+
+.pane .title {
+	padding: 1em 0;
+}
+
+.pane .polaroid {
+    box-shadow: #000 0 0 20px;
+    padding: 20px;
+    padding-bottom: 50px;
+}
+
+/* pane : intro */
+
+.pane.intro {
+	background: url(../img/happybday.jpg) center -20px no-repeat;
+	background-size: contain;
+}
+
+.pane.intro .wrap:after {
+    content: '(click anywhere to continue)';
+    color: #ccc;
+	position: absolute;
+	bottom: 30px;
+	left: 0;
+	width: 100%;
+}
+
+
+/* pane : video */
+
+.pane.video #introVid {
+    -webkit-transform: rotate(-2deg);
+    -moz-transform: rotate(-2deg);
+    -ms-transform: rotate(-2deg);
+    -o-transform: rotate(-2deg);
+    transform: rotate(-2deg);
+    /* -webkit-filter: blur(1px); */
+    /* -webkit-font-smoothing: antialiased; */
+}
+
+
+/* pane : gioke */
+
+.pane.gioke .wrap {
+	top: 45%;
+}
+.pane.gioke .cartoon {
+	display: inline-block;
+	padding: 50px 30px 60px;
+	color: #6b0808;
+
+    -webkit-transform: rotate(2deg);
+    -moz-transform: rotate(2deg);
+    -ms-transform: rotate(2deg);
+    -o-transform: rotate(2deg);
+    transform: rotate(2deg);
+
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -ms-filter: blur(0px);
+    -o-filter: blur(0px);
+    filter: blur(0px);
+}
+.pane.gioke .cartoon span {position: absolute;}
+.pane.gioke .cartoon .top {top: 20px; left: 20px;}
+.pane.gioke .cartoon .bottom {bottom: 25px; right: 20px;}
+
+
+
+/* pane : penultimate */
+
+.pane.penultimate {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	font-size: 1.3em;
+	background: #fff;
+}
+.pane.penultimate.inactive {
+	opacity: 0;
+	pointer-events: none;
+	bottom: -100%;
+
+	-webkit-transition: opacity 0.75s ease-in-out, bottom 0.1s linear .75s;
+	-moz-transition: opacity 0.75s ease-in-out, bottom 0.1s linear .75s;
+	-ms-transition: opacity 0.75s ease-in-out, bottom 0.1s linear .75s;
+	-o-transition: opacity 0.75s ease-in-out, bottom 0.1s linear .75s;
+	transition: opacity 0.75s ease-in-out, bottom 0.1s linear .75s;
+}
+
+.pane.penultimate .wrap:after {
+    content: '(click anywhere to continue)';
+    color: #ccc;
+}
+
+
+/* pane : end */
+
+.pane.end .title {
+	position: absolute;
+	bottom: 0;
+	left: 20px;
+	right: 20px;
+	background: #fff;
+	padding: 0.2em 0;
+	font-size: 2.5em;
+	/* border-top: 1px solid #eee; */
+}
+.pane.end .title span {
+	display: block;
+}
+
+.pane.end img {
+	width: 550px;
+}
+
+
+
+/* slacking mobile styles */
+
+@media only screen and (max-width:1300px) {
+	.pane.end .title {font-size: 2.2em;}
+	.pane.end img {width: 500px}
+}
+
+@media only screen and (max-width:850px) {
+	.pane.end .title {max-width: 450px; margin: 0 auto; left: auto; right: auto; position: relative; margin-top: -60px; top: -20px}
+}
+
+@media only screen and (max-width:650px) {
+	.pane.intro {background-position: center;}
+}
