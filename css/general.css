@@ -37,3 +37,10 @@ a {text-decoration:none;}
     -ms-transition: all linear .2s;
     -o-transition: all linear .2s;
 }
+
+.right {
+    float: right;
+}
+.left {
+    float: left;
+}
