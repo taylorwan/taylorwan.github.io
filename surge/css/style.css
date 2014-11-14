@@ -68,7 +68,7 @@ nav #logo img {
 /* about */
 
 .about .wrap {
-    background: rgba(255,255,255,.75);
+    background: rgba(255, 255, 255, 0.25);
     padding: 0 40px;
     margin: 0;
     height: 100%;
