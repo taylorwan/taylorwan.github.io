@@ -132,7 +132,7 @@ iframe { border: none; }
 
 /* intro pane */
 
-#intro {
+#intro, #end {
     background: url(../img/intro.jpg);
     background-size: cover;
     color:  #fff;
@@ -141,16 +141,17 @@ iframe { border: none; }
     background-attachment: fixed;
     font-weight: 100;
 }
-#intro .content {
+#intro .content,
+#end .content {
 	padding-top: 5em;
 	position: absolute;
 	width: 100%;
 	top: 0;
 	bottom: 0;
 	background: rgba(81, 167, 249, 0.15);
-	/*border-bottom: rgb(81, 167, 249) solid 10px;*/
 }
-#intro .title {
+#intro .title,
+#end .title {
 	font-size: 3em;
 	margin-top: 0.5em;
 	font-family: shadows into light;
@@ -300,3 +301,9 @@ iframe { border: none; }
 #jane1 .caption {
 	position: static;
 }
+
+
+
+/* end */
+#end .content { padding-top: 6em; }
+#end .sub { font-size: 1.5em; }
