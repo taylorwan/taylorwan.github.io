@@ -282,5 +282,9 @@ iframe { border: none; }
     text-align: center;
     height: auto !important;
     background: rgb(81, 167, 249);
+    padding: 40px 0;
+}
+#kim img {
+    padding: 40px 0;
 }
 
