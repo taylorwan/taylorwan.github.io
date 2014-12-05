@@ -44,6 +44,7 @@ body {
 ul { list-style: none; margin: 0; }
 i {font-family: FontAwesome;}
 iframe { border: none; }
+img { max-width: 100%; }
 
 .wrap { margin: 0 30px; }
 .flair { font-family: Shadows Into Light, Lato, Helvetica, sans-serif; }
