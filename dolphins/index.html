@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Earthquakes</title>
+	<meta name="viewport" content="width=device-width, initial-scale=0.8">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<link rel="stylesheet" href="../css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	
+</head>
+<body>
+	<!-- <nav class="top-nav">
+		<div class="wrap">
+			<div id="logo" class="left">
+				<a>Dolphins</a>
+			</div>
+			<div id="links" class="right">
+				<ul>
+					<li id="about" class="active">
+						<a>Summary</a>
+					</li>
+					<li id="visuals">
+						<a>Visuals</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+ -->
+	<section id="intro" class="pane">
+		<div class="content">
+			<div class="title">Swimming with Dolphins</div>
+
+<!-- 			<div id="subs">
+				<span class="sub">Do weather patterns or events have significant impact on dolphin activity?</span>
+				<span class="sub">Do weather patterns or events have significant events on social groups</span>
+			</div>
+ -->
+ 			<div class="creds">
+				<span class="zoe">Zoe</span> |
+				<span class="valerie">Valerie</span> |
+				<span class="jane">Jane</span> |
+				<span class="taylor">Taylor</span>
+			</div>
+			<div class="course">Data Science</span>
+			<div class="term">Fall 2012</span>
+
+			<div class="arrow">
+				<i class="fa fa-angle-down"></i>
+			</div>
+		</div>
+	</section>
+	<section id="eq" class="pane">
+		<!-- <img src="map.png"> -->
+		<div id="eqs">
+			<div class="eq" id="e1"  mag="3.4" date="08/21/06" lat="-24.777" lng="110.795"></div>
+			<div class="eq" id="e2"  mag="3.7" date="12/27/08" lat="-24.344" lng="112.396"></div>
+			<div class="eq" id="e3"  mag="3.6" date="05/19/06" lat="-24.985" lng="111.125"></div>
+			<div class="eq" id="e4"  mag="2.9" date="10/03/09" lat="-23.878" lng="113.311"></div>
+			<div class="eq" id="e5"  mag="3.0" date="12/19/08" lat="-24.921" lng="112.497"></div>
+			<div class="eq" id="e6"  mag="3.0" date="12/29/08" lat="-24.529" lng="113.024"></div>
+			<div class="eq" id="e7"  mag="2.9" date="02/17/08" lat="-24.096" lng="113.603"></div>
+			<div class="eq" id="e8"  mag="2.8" date="09/09/08" lat="-24.438" lng="113.395"></div>
+			<div class="eq" id="e9"  mag="3.4" date="01/14/09" lat="-25.040" lng="112.861"></div>
+			<div class="eq" id="e10" mag="3.2" date="12/05/09" lat="-25.349" lng="112.649"></div>
+			<div class="eq" id="e11" mag="3.2" date="09/13/10" lat="-24.903" lng="113.285"></div>
+			<div class="eq" id="e12" mag="2.9" date="08/18/09" lat="-23.772" lng="114.12"></div>
+			<div class="eq" id="e13" mag="3.2" date="07/23/07" lat="-23.533" lng="114.557"></div>
+			<div class="eq" id="e14" mag="3.6" date="08/16/10" lat="-23.517" lng="114.574"></div>
+			<div class="eq" id="e15" mag="3.1" date="06/21/07" lat="-25.292" lng="113.481"></div>
+			<div class="eq" id="e16" mag="3.8" date="08/21/10" lat="-23.505" lng="114.61"></div>
+			<div class="eq" id="e17" mag="2.7" date="08/14/10" lat="-24.595" lng="114.219"></div>
+			<div class="eq" id="e18" mag="2.9" date="02/02/10" lat="-24.941" lng="114.251"></div>
+			<div class="eq" id="e19" mag="2.7" date="04/20/10" lat="-24.753" lng="114.918"></div>
+			<div class="eq" id="e20" mag="3.2" date="06/22/09" lat="-25.094" lng="114.766"></div>
+			<div class="eq" id="e21" mag="2.8" date="10/20/07" lat="-24.538" lng="115.418"></div>
+			<div class="eq" id="e22" mag="2.8" date="05/10/08" lat="-23.903" lng="115.85"></div>
+			<div class="eq" id="e23" mag="3.5" date="05/08/07" lat="-27.250" lng="112.972"></div>
+			<div class="eq" id="e24" mag="3.0" date="03/16/08" lat="-27.009" lng="113.952"></div>
+			<div class="eq" id="e25" mag="2.4" date="02/23/10" lat="-27.170" lng="113.711"></div>
+			<div class="eq" id="e26" mag="3.5" date="10/09/10" lat="-27.251" lng="113.615"></div>
+			<div class="eq" id="e27" mag="3.5" date="06/27/07" lat="-25.283" lng="115.643"></div>
+			<div class="eq" id="e28" mag="2.9" date="07/20/08" lat="-27.303" lng="113.708"></div>
+			<div class="eq" id="e29" mag="2.5" date="12/11/06" lat="-26.965" lng="114.607"></div>
+			<div class="eq" id="e30" mag="3.8" date="01/26/06" lat="-26.080" lng="115.510"></div>
+			<div class="eq" id="e31" mag="3.1" date="01/06/09" lat="-25.380" lng="116.004"></div>
+			<div class="eq" id="e32" mag="2.4" date="05/18/10" lat="-27.740" lng="113.854"></div>
+			<div class="eq" id="e33" mag="2.3" date="09/14/08" lat="-25.949" lng="116.055"></div>
+			<div class="eq" id="e34" mag="2.5" date="03/27/09" lat="-25.001" lng="116.755"></div>
+			<div class="eq" id="e35" mag="2.2" date="11/16/06" lat="-27.327" lng="115.496"></div>
+			<div class="eq" id="e36" mag="2.7" date="10/24/06" lat="-25.367" lng="116.939"></div>
+			<div class="eq" id="e37" mag="3.0" date="09/23/07" lat="-25.486" lng="116.885"></div>
+			<div class="eq" id="e38" mag="2.3" date="06/24/06" lat="-28.090" lng="115.793"></div>
+		</div>
+		<div class="info">
+			<span class="title"><span class="flair">Shark Bay</span> Earthquakes</span>
+			<div class="row date">
+				<div class="label">Date</div>
+				<div class="data" id="date"><span style="color: rgba(255,255,255,.6); pointer-events: none;">Hover to begin</span></div>
+			</div>
+			<div class="row mag">
+				<div class="label">Magnitude</div>
+				<div class="data" id="mag"><span style="color: rgba(255,255,255,.6); pointer-events: none;">Hover to begin</span></div>
+			</div>
+			<div class="row coords">
+				<div class="label">Location</div>
+				<div class="data">
+					<span id="lat"><span style="color: rgba(255,255,255,.6); pointer-events: none;">Hover to begin</span></span>
+					<span id="lng"></span>
+				</div>
+			</div>
+
+			<div class="arrow">
+				<i class="fa fa-angle-down"></i>
+			</div>
+		</div>
+	</section>
+
+	<section class="pane">
+	</section>
+	<section class="pane">
+	</section>
+
+	<section id="zoe" class="pane">
+		<iframe src='zoe.html'></iframe>
+		<div class="caption">Family network for Shark Bay dolphins</div>
+		
+		<div class="arrow">
+			<i class="fa fa-angle-down"></i>
+		</div>
+	</section>
+
+	<section id="val" class="pane">
+		<iframe src='val.html'></iframe>
+		<div class="caption">Family network for dolphins bred in captivity</div>
+
+		<div class="arrow">
+			<i class="fa fa-angle-down"></i>
+		</div>
+	</section>
+
+	<section class="pane">
+	</section>
+</body>
+</html>

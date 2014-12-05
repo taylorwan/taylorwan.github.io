@@ -1,0 +1,276 @@
+/******
+ *
+ * dolphins
+ * 
+ * data science
+ * professor singh
+ * fall 2014
+ * 
+ * created by taylor wan
+ * 
+ * ----------
+ * CONTENTS
+ * ----------
+ * - general styles
+ * - intro
+ * - earthquakes
+ *
+ ******/
+
+
+/*  fonts */
+
+@import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400);
+
+@font-face {
+    font-family: 'FontAwesome';
+    src: url("../../fonts/fontawesome.otf"),
+        url("../../fonts/fontawesome-webfont.eot"),
+        url("../../fonts/fontawesome-webfont.svg"),
+        url("../../fonts/fontawesome-webfont.ttf"),
+        url("../../fonts/fontawesome-webfont.woff");
+}
+
+
+/*  general styles */
+
+body {
+	margin: 0;
+    font-family: Lato, Helvetica, sans-serif;
+    font-weight: 300;
+}
+
+ul { list-style: none; margin: 0; }
+i {font-family: FontAwesome;}
+iframe { border: none; }
+
+.wrap { margin: 0 30px; }
+.flair { font-family: Shadows Into Light, Lato, Helvetica, sans-serif; }
+
+
+
+/* panes */
+
+.pane {
+	position: relative;
+	border-bottom: rgb(81, 167, 249) solid 10px;
+	overflow: hidden;
+}
+.pane .caption {
+    position: absolute;
+    
+    bottom: 0;
+    text-align: center;
+    background: rgb(81, 167, 249);
+    color: #fff;
+    padding: 0.7em 1.5em 0.5em;
+    font-size: 2em;
+}
+.arrow {
+	position: absolute;
+	bottom: 0;
+    font-size: 96px;
+    color: rgba(255, 255, 255, 0.6);
+}
+.arrow:hover { cursor: pointer; }
+
+#eq .arrow, #intro .arrow {
+    left: 50%;
+    margin-left: -31px;
+}
+
+#zoe .arrow,
+#val .arrow {
+	right: 0;
+	padding: 0 13px;
+	top: 87.5%;
+}
+#zoe .arrow:after,
+#val .arrow:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	height: 77px;
+	width: 88px;
+	background: rgb(81, 167, 249);
+	z-index: -1;
+}
+
+
+/* top nav
+
+.top-nav {
+    position: absolute;
+    color: #fff;
+	width: 100%;
+}
+.top-nav #logo {
+	padding: 20px 10px;
+	float: left;
+	font-size: 1.5em;
+}
+.top-nav li:hover {
+	cursor: pointer;
+}
+.top-nav li:hover a {
+	border-bottom: 1px solid #fff;
+	padding-bottom: 7px;
+}
+.top-nav ul {
+	float: right;
+}
+.top-nav li {
+	float: left;
+	padding: 20px 10px;
+	line-height: 2em;
+	font-size: 1.2em;
+}*/
+
+
+
+/* intro pane */
+
+#intro {
+    background: url(../img/intro.jpg);
+    background-size: cover;
+    color:  #fff;
+    text-align: center;
+    font-size: 2em;
+    background-attachment: fixed;
+    font-weight: 100;
+}
+#intro .content {
+	padding-top: 5em;
+	position: absolute;
+	width: 100%;
+	top: 0;
+	bottom: 0;
+	background: rgba(81, 167, 249, 0.15);
+	/*border-bottom: rgb(81, 167, 249) solid 10px;*/
+}
+#intro .title {
+	font-size: 3em;
+	margin-top: 0.5em;
+	font-family: shadows into light;
+	letter-spacing: .03em;
+}
+#intro .creds span {
+	padding: .35em .5em 1em;
+	display: inline-block;
+	font-size: 1.2em;
+}
+
+#intro .arrow {
+	animation: arrowBounce 2s ease-in-out infinite;
+    -webkit-animation: arrowBounce 2s ease-in-out infinite; 
+    -moz-animation: arrowBounce 2s ease-in-out infinite;
+    -ms-animation: arrowBounce 2s ease-in-out infinite;
+    -o-animation: arrowBounce 2s ease-in-out infinite;
+}
+
+@keyframes arrowBounce { 0% { opacity: 1; bottom: 15px; } 50% { bottom: 1px; } 80% { bottom: 0px; opacity: 0; } 85% { bottom: 25px; opacity: 0; } 95% { bottom: 15px; opacity: .9; } 100% { bottom: 15px; opacity: 1; } }
+@-webkit-keyframes arrowBounce { 0% { opacity: 1; bottom: 15px; } 50% { bottom: 1px; } 80% { bottom: 0px; opacity: 0; } 85% { bottom: 25px; opacity: 0; } 95% { bottom: 15px; opacity: .9; } 100% { bottom: 15px; opacity: 1; } }
+@-moz-keyframes arrowBounce { 0% { opacity: 1; bottom: 15px; } 50% { bottom: 1px; } 80% { bottom: 0px; opacity: 0; } 85% { bottom: 25px; opacity: 0; } 95% { bottom: 15px; opacity: .9; } 100% { bottom: 15px; opacity: 1; } }
+@-ms-keyframes arrowBounce { 0% { opacity: 1; bottom: 15px; } 50% { bottom: 1px; } 80% { bottom: 0px; opacity: 0; } 85% { bottom: 25px; opacity: 0; } 95% { bottom: 15px; opacity: .9; } 100% { bottom: 15px; opacity: 1; } }
+@-o-keyframes arrowBounce { 0% { opacity: 1; bottom: 15px; } 50% { bottom: 1px; } 80% { bottom: 0px; opacity: 0; } 85% { bottom: 25px; opacity: 0; } 95% { bottom: 15px; opacity: .9; } 100% { bottom: 15px; opacity: 1; } }
+
+
+
+
+/* earthquakes pane */
+
+#eq {
+	position: relative;
+	text-align: center;
+	background: url(../img/map.jpg);
+	background-position: 28.6% 44%;
+	background-size: 146%;
+}
+#eqs {
+	width:776px;
+	left: 50%;
+	margin-left: -388px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+}
+#eqs .eq {
+	width: 15px;
+	height: 15px;
+	background: #FCFCFC;
+	border-radius: 100%;
+	box-shadow: 0 0 10px rgb(244, 243, 240);
+	position: absolute;
+
+	-webkit-transition: all .1s linear .1s;
+	-moz-transition: all .1s linear .1s;
+	-ms-transition: all .1s linear .1s;
+	-o-transition: all .1s linear .1s;
+	transition: all .1s linear .1s;
+}
+#eqs .eq:hover {
+	cursor: pointer;
+	-webkit-transition: all .15s linear;
+	-moz-transition: all .15s linear;
+	-ms-transition: all .15s linear;
+	-o-transition: all .15s linear;
+	transition: all .15s linear;
+}
+
+#eq .info {
+    position: absolute;
+    padding: 20px 30px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: rgb(81, 167, 249);
+    color: #fff;
+    box-shadow: 0 0 5px #ccc;
+    width: 270px;
+    font-size: 2em;
+}
+#eq .title {font-weight: bold; font-size: 1.2em; margin: 1.5em 0 1.2em; display: block; }
+#eq .row {margin: 1em 0;}
+#eq .label {margin: 0.3em 0; font-weight: 400;}
+
+/* points */
+#eq #e1 {top: 40.25%; left: 13.55%;}
+#eq #e2 {top: 34.5%; left: 32.4%;}
+#eq #e3 {top: 43.28%; left: 17.43%;}
+#eq #e4 {top: 27.74%; left: 43.1%;}
+#eq #e5 {top: 42.25%; left: 33.55%;}
+#eq #e6 {top: 36.94%; left: 39.68%;}
+#eq #e7 {top: 30.6%; left: 46.45%;}
+#eq #e8 {top: 35.65%; left: 43.92%;}
+#eq #e9 {top: 44.17%; left: 37.76%;}
+#eq #e10 {top: 48.42%; left: 35.3%;}
+#eq #e11 {top: 42%; left: 42.7%;}
+#eq #e12 {top: 26.23%; left: 52.45%;}
+#eq #e13 {top: 22.9%; left: 57.73%;}
+#eq #e14 {top: 22.7%; left: 58.05%;}
+#eq #e15 {top: 47.37%; left: 45.03%;}
+#eq #e16 {top: 22.5%; left: 58.5%;}
+#eq #e17 {top: 37.78%; left: 53.67%;}
+#eq #e18 {top: 42.42%; left: 54.05%;}
+#eq #e19 {top: 39.93%; left: 61.9%;}
+#eq #e20 {top: 44.86%; left: 60.11%;}
+#eq #e21 {top: 36.94%; left: 67.84%;}
+#eq #e22 {top: 28.08%; left: 72.78%;}
+#eq #e23 {top: 75.08%; left: 39.1%;}
+#eq #e24 {top: 71.62%; left: 50.55%;}
+#eq #e25 {top: 73.94%; left: 47.6%;}
+#eq #e26 {top: 75.1%; left: 46.4%;}
+#eq #e27 {top: 47.38%; left: 70.4%;}
+#eq #e28 {top: 76.23%; left: 47.74%;}
+#eq #e29 {top: 71.06%; left: 58.24%;}
+#eq #e30 {top: 58.67%; left: 68.85%;}
+#eq #e31 {top: 48.9%; left: 74.66%;}
+#eq #e32 {top: 82.3%; left: 49.41%;}
+#eq #e33 {top: 56.8%; left: 75.32%;}
+#eq #e34 {top: 43.43%; left: 83.44%;}
+#eq #e35 {top: 76.16%; left: 68.72%;}
+#eq #e36 {top: 48.7%; left: 85.6%;}
+#eq #e37 {top: 50%; left: 84.92%;}
+#eq #e38 {top: 87.2%; left: 72.22%;}
