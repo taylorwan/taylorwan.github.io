@@ -6,8 +6,8 @@ $(function() {
 
 
 	// loading iframes
-    $( '#zoe' ).load( 'zoe.html' );
-    $( '#val' ).load( 'val.html' );
+    // $( '#zoe' ).load( 'zoe.html' );
+    // $( '#val' ).load( 'val.html' );
 
     
     // arrow click: move down one pane
