@@ -278,13 +278,25 @@ iframe { border: none; }
 
 /* kim */
 
-#kim {
+#kim, #jane1 {
     text-align: center;
     height: auto !important;
     background: rgb(81, 167, 249);
     padding: 40px 0;
 }
-#kim img {
+#kim img, #jane1 img {
     padding: 40px 0;
 }
+
+
+/* jane */
+
+#jane1 {
+	margin-top: 10px;
+}
+.jane .row img {
+	width: 46%;
+	margin: 0 .5%;
+}
+
 
