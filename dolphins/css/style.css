@@ -274,3 +274,13 @@ iframe { border: none; }
 #eq #e36 {top: 48.7%; left: 85.6%;}
 #eq #e37 {top: 50%; left: 84.92%;}
 #eq #e38 {top: 87.2%; left: 72.22%;}
+
+
+/* kim */
+
+#kim {
+    text-align: center;
+    height: auto !important;
+    background: rgb(81, 167, 249);
+}
+
