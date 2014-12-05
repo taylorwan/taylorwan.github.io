@@ -70,22 +70,22 @@ iframe { border: none; }
 .arrow {
 	position: absolute;
 	bottom: 0;
-    font-size: 96px;
+    right: 0;
+	padding: 0 13px;
+	top: 87.5%;
+	font-size: 96px;
     color: rgba(255, 255, 255, 0.6);
 }
 .arrow:hover { cursor: pointer; }
 
 #eq .arrow, #intro .arrow {
     left: 50%;
+    right: auto;
+    top: auto;
+    padding: 0;
     margin-left: -31px;
 }
 
-#zoe .arrow,
-#val .arrow {
-	right: 0;
-	padding: 0 13px;
-	top: 87.5%;
-}
 #zoe .arrow:after,
 #val .arrow:after {
 	content: '';
@@ -280,23 +280,23 @@ iframe { border: none; }
 
 #kim, #jane1 {
     text-align: center;
-    height: auto !important;
     background: rgb(81, 167, 249);
-    padding: 40px 0;
 }
-#kim img, #jane1 img {
+#kim img {
     padding: 40px 0;
 }
 
 
 /* jane */
 
-#jane1 {
-	margin-top: 10px;
+.jane img {
+	margin: 0 2%;
+	background: #fff;
+	padding: 20px 2%;
 }
 .jane .row img {
-	width: 46%;
-	margin: 0 .5%;
+	width: 38%;
 }
-
-
+#jane1 .caption {
+	position: static;
+}
