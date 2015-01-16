@@ -139,14 +139,17 @@ function moveFromInput( event ) {
 }
 
 function move( orig , dest ) {
-	if ( !isEmpty( dest ) ) {
-		addCapture( dest );
-	}
-	// if ( isEmpty( dest ) ) {
-		copy( orig , dest );
-	// } else {
-		// deleteAround( dest );
+	// if ( !isEmpty( dest ) ) {
+		// addCapture( dest );
 	// }
+
+	if ( isEmpty( dest ) ) {
+		copy( orig , dest );
+
+	//else, capture
+	} else {
+		deleteAround( dest );
+	}
 	deleteAt( orig );
 	$( '.board[turn="white"]' ).attr( 'turn', 'black' );
 	$( '.board[turn="black"]' ).attr( 'turn', 'white' );
