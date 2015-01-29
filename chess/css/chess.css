@@ -169,17 +169,17 @@ a {text-decoration:none; color: #ddd;}
     clear: both;
     overflow: hidden;
 }
-.row:nth-child(even) .col:nth-child(even),
-.row:nth-child(odd) .col:nth-child(odd) {
+.row:nth-child(even) .square:nth-child(even),
+.row:nth-child(odd) .square:nth-child(odd) {
     background: rgba(0,0,0,.4);
 }
 
-.col {
+.square {
     float: left;
     height: 60px;
     width: 60px;
 }
-.col.active {
+.square.active {
     background: rgba(154, 240, 247, 1) !important;
 }
 
@@ -197,8 +197,13 @@ a {text-decoration:none; color: #ddd;}
     font: 60px/1 chess;
     color: #444;
 }
-.piece:hover {
+.board[turn="white"] .white:hover,
+.board[turn="black"] .black:hover {
     cursor: pointer;
+}
+.board[turn="white"] .black:hover,
+.board[turn="black"] .white:hover {
+    cursor: default;
 }
 
 
@@ -328,7 +333,7 @@ footer .me {
     .main {margin-left: -230px;}
     
     .board {width: 400px;}
-    .col {width: 50px; height: 50px;}
+    .square {width: 50px; height: 50px;}
     .board .label {line-height: 50px; font-size: 15px;}
     .board .zero .label {width: 50px;}
     .piece {font-size: 50px; width: 50px;}
@@ -342,7 +347,7 @@ footer .me {
 
 @media only screen and (max-width: 850px) {
     
-    .main {top:40px;}
+    .main {top: 40px;}
     
     .righty, .lefty {bottom: auto; width: auto;}
     .middle {display: none;}
@@ -358,7 +363,7 @@ footer .me {
     .main {left: 50%; margin-left: -200px;}
     
     .board {width: 320px;}
-    .col {width: 40px; height: 40px;}
+    .square {width: 40px; height: 40px;}
     .board .label {line-height: 40px; font-size: 15px;}
     .board .zero .label {width: 40px;}
     .piece {font-size: 40px; width: 40px;}
@@ -376,7 +381,7 @@ footer .me {
     .main {margin-left: -160px;}
     
     .board {width: 280px;}
-    .col {width: 35px; height: 35px;}
+    .square {width: 35px; height: 35px;}
     .board .label {line-height: 35px; font-size: 14px;}
     .board .zero .label {width: 35px;}
     .piece {font-size: 35px; width: 35px;}

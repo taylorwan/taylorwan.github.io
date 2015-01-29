@@ -4,6 +4,7 @@ $( document ).ready( function() {
 	initialize();
 	$( window ).resize( initialize );
 
+	//interactives
 	//moving a piece
 	$( '#move' ).click( moveFromInput );
 	//atomic! (blowing up around square)
@@ -15,21 +16,22 @@ $( document ).ready( function() {
 	//reset board
 	$( '#reset' ).click( reset );
 
+	//upon click of a piece...
 	//click movement
-	$( '.col' ).click( function() {
-		var $active = $( '.col.active' );
+	$( '.square' ).click( function() {
+		var $active = $( '.square.active' );
 		var $this = $( this );
+		var turn = $( '.board' ).attr( 'turn' );
 		var orig = $active.attr( 'id' );
 		var cur = $this.attr( 'id' );
 		var thisColor = $this.find( '.piece' ).attr( 'color' );
 		var origColor = $active.find( '.piece' ).attr( 'color' );
 
 		//square has piece
-		if ( !isEmpty( cur ) ) {
-
+		if ( !isEmpty( cur ) && ( turn == thisColor || turn == origColor ) ) {
 			//same square is clicked
 			if ( $this.hasClass( 'active' ) ) {
-				$( '.col' ).removeClass( 'active' );
+				$( '.square' ).removeClass( 'active' );
 			}
 			else {
 				//dif piece clicked: if pieces have opposing colors
@@ -39,15 +41,16 @@ $( document ).ready( function() {
 
 				//dif piece clicked: if pieces have same colors
 				} else {
-					$( '.col' ).removeClass( 'active' );
+					$( '.square' ).removeClass( 'active' );
 					$this.toggleClass( 'active' );
 				}
 			}
 		}
 
-		//square empty: move a piece to this square
+		//square empty & there is an active square: move a piece to this square
 		else if ( $active ) {
-			move( orig, cur );
+			if ( turn == thisColor || turn == origColor )
+				move( orig, cur );
 			$active.removeClass( 'active' );
 		}
 	});
@@ -155,12 +158,9 @@ function move( orig , dest ) {
 	// turn-taking
 	var $board = $( '.board' );
 	var turn = $board.attr( 'turn' );
-	console.log('turn taking! turn:', turn);
 	if ( turn == "white" ) {
-		console.log('turning white')
 		$board.attr( 'turn', 'black' );
 	} else {
-		console.log('turning black')
 		$board.attr( 'turn', 'white' );
 	}
 }
@@ -265,12 +265,12 @@ function deleteSquare( event ) {
 function reset( event ) {
 	event.preventDefault();
 	
-	$( '.col' ).html( '' );
+	$( '.square' ).html( '' );
 	$( '.captured .holder' ).html( '' );
 
 	//pawns
-	$( '.seven .col' ).html( '<div class="piece black pawn" color="black">o</div>' );
-	$( '.two .col' ).html( '<div class="piece white pawn" color="white">p</div>' );
+	$( '.seven .square' ).html( '<div class="piece black pawn" color="black">o</div>' );
+	$( '.two .square' ).html( '<div class="piece white pawn" color="white">p</div>' );
 	
 	//rooks
 	$( '#a8, #h8' ).html( '<div class="piece black rook" color="black">t</div>' );
