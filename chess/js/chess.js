@@ -151,8 +151,18 @@ function move( orig , dest ) {
 		deleteAround( dest );
 	}
 	deleteAt( orig );
-	$( '.board[turn="white"]' ).attr( 'turn', 'black' );
-	$( '.board[turn="black"]' ).attr( 'turn', 'white' );
+
+	// turn-taking
+	var $board = $( '.board' );
+	var turn = $board.attr( 'turn' );
+	console.log('turn taking! turn:', turn);
+	if ( turn == "white" ) {
+		console.log('turning white')
+		$board.attr( 'turn', 'black' );
+	} else {
+		console.log('turning black')
+		$board.attr( 'turn', 'white' );
+	}
 }
 
 //delete around a given square
