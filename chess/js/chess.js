@@ -145,7 +145,6 @@ function move( orig , dest ) {
 	// if ( !isEmpty( dest ) ) {
 		// addCapture( dest );
 	// }
-
 	if ( isEmpty( dest ) ) {
 		copy( orig , dest );
 
@@ -221,26 +220,26 @@ function insert( event ) {
 
 	//piece to insert
 	var val = $( '#insertPiece' ).val();
-	var colChar = val.charAt(0);
+	var colorChar = val.charAt(0);
 	var piece = val.substr(1);
 
 	//color of piece
 	var color = 'white';
-	if ( colChar == 'B' ) {
+	if ( colorChar == 'B' ) {
 		color = 'black';
 	}
 	//convert to chess font
 	var fontVar = 'p';
 	if ( piece == "pawn" ) {
-		if ( colChar == 'B' ) { fontVar = 'o'; }
+		if ( colorChar == 'B' ) { fontVar = 'o'; }
 	} else if ( piece == "knight" ) {
-		if ( colChar == 'B' ) { fontVar = 'j'; } else { fontVar = 'h'; }
+		if ( colorChar == 'B' ) { fontVar = 'j'; } else { fontVar = 'h'; }
 	} else if ( piece == "bishop" ) {
-		if ( colChar == 'B' ) { fontVar = 'n'; } else { fontVar = 'b'; }
+		if ( colorChar == 'B' ) { fontVar = 'n'; } else { fontVar = 'b'; }
 	} else if ( piece == "rook" ) {
-		if ( colChar == 'B' ) { fontVar = 't'; } else { fontVar = 'r'; }
+		if ( colorChar == 'B' ) { fontVar = 't'; } else { fontVar = 'r'; }
 	} else if ( piece == "queen" ) {
-		if ( colChar == 'B' ) { fontVar = 'w'; } else { fontVar = 'q'; }
+		if ( colorChar == 'B' ) { fontVar = 'w'; } else { fontVar = 'q'; }
 	}
 
 	//insert & clear
@@ -261,9 +260,62 @@ function deleteSquare( event ) {
 }
 
 
+function validMove( piece, id ) {
+	
+	var validSquares = []
+	var length = 0;
+	
+
+	var row = ParseInt( id[1] );
+	var curR = String.fromCharCode( row );
+	var prevR = String.fromCharCode( row - 1 );
+	var nextR = String.fromCharCode( row + 1 );
+	var col = id.charCodeAt(0);
+	var curR = String.fromCharCode( row );
+	var prevR = String.fromCharCode( row - 1 );
+	var nextR = String.fromCharCode( row + 1 );
+
+	if ( piece == "pawn" ) {
+
+		// if first move
+		if ( row == 2 ) {
+			console.log("numerical 2");
+			validSquares[ length++ ] = col + "4";
+		} else if ( col == "2" ) {
+			console.log("alpha 2");
+		}
+
+		//next square
+		var newRow = row + forward();
+		validSquares[ length++ ] = col + newRow;
+
+		//for capturable pieces: left
+
+		
+
+	}
+
+	return validSquares;
+}
+
+function forward() {
+	var color = $( '.board' ).attr( 'turn' );
+	if ( color == "black" )
+		return -1;
+	else if ( color == "white" )
+		return 1;
+	else {
+		console.log( "invalid color?!" );
+		return 0;
+	}
+}
+
+
 //reset board
 function reset( event ) {
 	event.preventDefault();
+
+	$( '.board' ).attr( 'turn', 'white' );
 	
 	$( '.square' ).html( '' );
 	$( '.captured .holder' ).html( '' );
