@@ -49,6 +49,9 @@ a:hover {
     -o-transform: rotate(-3deg);
     transform: rotate(-3deg);
 }
+.subtitle {
+    margin-top: 2em;
+}
 #main-content {
     text-align: center;
 }
@@ -56,7 +59,7 @@ a:hover {
 
 /* background */
 
-html, body {
+html {
     background: url(../img/bg.jpg);
     background-size: cover;
     color: #fff;
@@ -81,18 +84,24 @@ html, body {
 #top-nav {
     line-height: 60px;
     overflow: hidden;
+    position: fixed;
+    /* width: 100%; */
+    line-height: 3.5em;
+    top: 2em;
 }
 #top-nav .logo {
-    float: left;
-    font-size: 2em;
+    /* float: left; */
+    font-size: 2.5em;
 }
 #top-nav .links {
-    float: right;
+    /* float: right; */
     font-weight: 400;
 }
 #top-nav .links li {
-    float: left;
-    margin-left: 25px;
+    /* float: left; */
+    margin-left: 1em;
+    font-size: 1.5em;
+    text-shadow: black 1px 1px;
 }
 
 
@@ -109,7 +118,7 @@ html, body {
 .index #main-content .splash {
     text-align: center;
     font-size: 2em;
-    margin-top: 100px;
+    margin-top: 12%;
     font-weight: 400;
 }
 .index #main-content .logo {
