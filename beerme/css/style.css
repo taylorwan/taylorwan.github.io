@@ -29,6 +29,9 @@ a:hover {
     -o-transition: all .15s linear;
     transition: all .15s linear;
 }
+img {
+    max-width: 100%;
+}
 
 .wrap {
     margin: 0 40px;
@@ -49,6 +52,9 @@ a:hover {
     -o-transform: rotate(-3deg);
     transform: rotate(-3deg);
 }
+.subtitle {
+    margin-top: 2em;
+}
 #main-content {
     text-align: center;
 }
@@ -56,7 +62,7 @@ a:hover {
 
 /* background */
 
-html, body {
+html {
     background: url(../img/bg.jpg);
     background-size: cover;
     color: #fff;
@@ -67,12 +73,16 @@ html, body {
 
 .about #main-content .wrap,
 .team #main-content .wrap,
-.app #main-content .instructions {
+.app #main-content .instructions,
+.software #main-content .wrap {
     margin: 2em auto;
     background: rgba(69, 50, 9, 0.6);
     box-shadow: #000 0 0 1000px inset;
     padding: 2em 3em;
-    width: 500px;
+    width: 60%;
+    max-width: calc(90% - 200px);
+    position: relative;
+    left: 60px;
 }
 
 
@@ -81,18 +91,24 @@ html, body {
 #top-nav {
     line-height: 60px;
     overflow: hidden;
+    position: fixed;
+    /* width: 100%; */
+    line-height: 3.5em;
+    top: 2em;
 }
 #top-nav .logo {
-    float: left;
-    font-size: 2em;
+    /* float: left; */
+    font-size: 2.5em;
 }
 #top-nav .links {
-    float: right;
+    /* float: right; */
     font-weight: 400;
 }
 #top-nav .links li {
-    float: left;
-    margin-left: 25px;
+    /* float: left; */
+    margin-left: 1em;
+    font-size: 1.5em;
+    text-shadow: black 1px 1px;
 }
 
 
@@ -109,7 +125,7 @@ html, body {
 .index #main-content .splash {
     text-align: center;
     font-size: 2em;
-    margin-top: 100px;
+    margin-top: 12%;
     font-weight: 400;
 }
 .index #main-content .logo {
@@ -165,7 +181,6 @@ html, body {
     max-width: 200px;
     max-height: 200px;
     overflow:hidden;
-    background: #000;
     border-radius: 10px;
     border: #fff 1px dashed;
     width: 90%;
@@ -186,4 +201,77 @@ html, body {
 }
 .app .instructions ol li {
     padding-left: .5em;
+}
+
+
+/* software */
+
+.software #main-content .wrap {
+    width: 60%;
+}
+.software pre {
+    max-width: 100%;
+    text-align: left;
+    opacity: .9;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    white-space: pre-wrap;
+    max-height: 300px;
+    border: 2px #fff solid;
+    border-radius: 10px;
+    padding: 2em;
+    font-size: 1.2em;
+}
+.software .uml-holder {
+    margin: 2em 4em 4em;
+}
+.software .uml-holder:hover {
+    cursor: pointer;
+}
+
+/* uml lightbox */
+
+#bigUML {
+    position: fixed;
+    top: 20px;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(45, 45, 45, 0.95);
+    box-shadow: #000 0 0 1000px;
+    padding: 2em;
+    text-align: center;
+    opacity: 1;
+
+    -webkit-transition: all .25s linear;
+    -moz-transition: all .25s linear;
+    -ms-transition: all .25s linear;
+    -o-transition: all .25s linear;
+    transition: all .25s linear;
+}
+#bigUML .wrap {
+    overflow-y: scroll;
+    max-height: 100%;
+}
+#bigUML.hide {
+    top: -100%;
+    opacity: 0;
+    background: rgba(45, 45, 45, 0);
+    pointer-events: none;
+}
+#closeUML {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 65px;
+    height: 65px;
+    overflow: hidden;
+}
+#closeUML:hover {
+    cursor: pointer;
+}
+#closeUML:before {
+    content:'\2716';
+    padding: 0 0.3em;
+    font-size: 3em;
 }

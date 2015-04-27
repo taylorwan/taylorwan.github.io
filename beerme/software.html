@@ -4,8 +4,9 @@
 	<title>Beer Me - Software</title>
 	<meta name="viewport" content="width=device-width, initial-scale=0.8">
 	<link rel="icon" type="image/ico" href="img/icon.png"/>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 	<link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body class="software">
@@ -27,12 +28,21 @@
 
 	<div id="main-content">
 		<div class="wrap">
-			<div class="title">
-				Software
-			</div>
+
 			<div class="content">
 
-				<p>Application.java</p>
+				<div class="title">
+					Software
+				</div>
+
+				<div class="uml-holder" id="expandUML">
+					<img src="img/uml.png">
+				</div>
+
+				<div class="title">
+					Application.java
+				</div>
+
 				<pre>import java.applet.Applet;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -183,6 +193,13 @@ public class Application extends Applet
 
 			
 
+		</div>
+	</div>
+
+	<div id="bigUML" class="hide">
+		<a id="closeUML"></a>
+		<div class="wrap">
+			<img src="img/uml.png">
 		</div>
 	</div>
 
