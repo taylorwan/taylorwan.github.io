@@ -196,6 +196,9 @@ html {
 
 /* app */
 
+.app {
+    margin-top: 2em;
+}
 .app .instructions ol {
     text-align: left;
 }
