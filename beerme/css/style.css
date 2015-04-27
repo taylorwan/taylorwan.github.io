@@ -202,6 +202,9 @@ html {
 .app .instructions ol li {
     padding-left: .5em;
 }
+.app object {
+    margin-left: 100px;
+}
 
 
 /* software */
