@@ -1,220 +1,102 @@
-@import url('http://fonts.googleapis.com/css?family=Open+Sans:300,400,600');
-@import url('http://fonts.googleapis.com/css?family=Cabin+Sketch');
+@font-face {
+    font-family: 'FontAwesome';
+    src: url("../fonts/fontawesome.otf"),
+        url("../fonts/fontawesome-webfont.eot"),
+        url("../fonts/fontawesome-webfont.svg"),
+        url("../fonts/fontawesome-webfont.ttf"),
+        url("../fonts/fontawesome-webfont.woff");
+}
 
-/* general styles */
+/* --- general styles --- */
 
 body {
-    margin: 0 auto;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-}
-ul {
-    list-style: none;
-    margin: 0 auto;
-    padding: 0;
-}
-ol {
+    font: 26px/1.22 Helvetica, Arial, sans-serif;
+    color: #666;
+    text-transform: lowercase;
     margin: 0;
-    padding: 0;
-    padding-left: 1.6em;
 }
-a {
-    color: inherit;
-    text-decoration: none;
-}
-a:hover {
-    -webkit-transition: all .15s linear;
-    -moz-transition: all .15s linear;
-    -ms-transition: all .15s linear;
-    -o-transition: all .15s linear;
-    transition: all .15s linear;
-}
-
 .wrap {
-    margin: 0 40px;
-}
-.logo {
-    font-family: Cabin Sketch, sans-serif;
-}
-.title {
-    font-size: 2em;
-    margin: 0.8em auto 1em;
-    font-family: Cabin Sketch, sans-serif;
-    border: 0.2em dashed;
-    display: inline-block;
-    padding: 0.2em 0.4em;
-    -webkit-transform: rotate(-3deg);
-    -moz-transform: rotate(-3deg);
-    -ms-transform: rotate(-3deg);
-    -o-transform: rotate(-3deg);
-    transform: rotate(-3deg);
-}
-.subtitle {
-    margin-top: 2em;
-}
-#main-content {
-    text-align: center;
-}
-
-
-/* background */
-
-html {
-    background: url(../img/bg.jpg);
-    background-size: cover;
-    color: #fff;
-}
-
-
-/* dark box */
-
-.about #main-content .wrap,
-.team #main-content .wrap,
-.app #main-content .instructions,
-.software #main-content .wrap {
-    margin: 2em auto;
-    background: rgba(69, 50, 9, 0.6);
-    box-shadow: #000 0 0 1000px inset;
-    padding: 2em 3em;
-    width: 60%;
-    max-width: calc(90% - 200px);
-    position: relative;
-    left: 60px;
-}
-
-
-/* nav bar */
-
-#top-nav {
-    line-height: 60px;
-    overflow: hidden;
-    position: fixed;
-    /* width: 100%; */
-    line-height: 3.5em;
-    top: 2em;
-}
-#top-nav .logo {
-    /* float: left; */
-    font-size: 2.5em;
-}
-#top-nav .links {
-    /* float: right; */
-    font-weight: 400;
-}
-#top-nav .links li {
-    /* float: left; */
-    margin-left: 1em;
-    font-size: 1.5em;
-    text-shadow: black 1px 1px;
-}
-
-
-/* index */
-
-.index:after {
-    content: "Photo by Dogancan Ozturan";
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    opacity: 0.8;
-    font-size: .8em;
-}
-.index #main-content .splash {
-    text-align: center;
-    font-size: 2em;
-    margin-top: 12%;
-    font-weight: 400;
-}
-.index #main-content .logo {
-    font-size: 3em;
-    line-height: 1em;
-    border: 10px dashed;
-    display: inline-block;
-    border-radius: 10px;
-    padding: .2em 0.35em;
-    margin-bottom: 0.2em;
-    -webkit-transform: rotate(-3deg);
-    -moz-transform: rotate(-3deg);
-    -ms-transform: rotate(-3deg);
-    -o-transform: rotate(-3deg);
-    transform: rotate(-3deg);
-}
-.index #main-content #goToApp {
-    border: #fff 3px solid;
-    /* border: #453209 2px solid; */
-    padding: 0.3em 1em;
-    display: inline-block;
-    border-radius: 10px;
-    margin-top: 2em;
-    font-size: 1.2em;
-    /* color: #453209; */
-    /* background: #fff; */
-}
-.index #main-content #goToApp:hover {
-    background: none;
-    box-shadow: #fff 0 0 5px, #453209 0 0 10px;
-    /* box-shadow: rgba(255,255,255,.4) 0 0 10px; */
-    /* background: #fff; */
-    /* color: #453209; */
-    /* border-color: #453209; */
-}
-
-
-/* team */
-
-#main-content .team {
-    width: 90%;
-    max-width: 600px;
     margin: 0 auto;
+    width: 320px;
     overflow: hidden;
 }
-.team .member {
+
+i {font-family: FontAwesome;}
+ul {list-style: none;padding: 0;}
+
+a {text-decoration: none;}
+:hover {
+    transition: all linear .3s;
+    -webkit-transition: all linear .3s;
+    -moz-transition: all linear .3s;
+    -ms-transition: all linear .3s;
+    -o-transition: all linear .3s;
+}
+
+
+/* --- header --- */
+
+.main {
+    position: relative;
+}
+
+.main h1 {
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-size: 97px;
+    margin: 30% 0 20px;
+    /*color: rgb(115, 33, 136);*/
+}
+
+#resume a {color: #b8b8b8;}
+#songwritr a {color: #bababa;}
+#birthday a {color: #bdbdbd;}
+#halloffame a {color: #ccc;}
+#atomic a {color: #ddd;}
+#freely a {color: #eee;}
+
+.links a:hover {padding-left: 3px;}
+#resume a:hover {color: #888;}
+#songwritr a:hover {color: #8a8a8a;}
+#birthday a:hover {color: #8f8f8f;}
+#halloffame a:hover {color: #9c9c9c;}
+#atomic a:hover {color: #adadad;}
+#freely a:hover {color: #bebebe;}
+
+
+/* --- footer --- */
+
+footer {
+    padding: 10px 0;
+    text-align: right;
+    margin: 75px 0;
+}
+
+footer .social-links {
+    margin: 0;
+    overflow: hidden;
+    float: right;
+}
+
+footer .social-links li {
     float: left;
-    margin: 1em 0;
-    width: 50%;
-}
-.team .member .photo-holder {
-    margin: 1em auto;
-    max-width: 200px;
-    max-height: 200px;
-    overflow:hidden;
-    border-radius: 10px;
-    border: #fff 1px dashed;
-    width: 90%;
-}
-.team .member .photo-holder img {
-    max-width: 100%;
-    max-height: 100%;
-}
-.team .member .name {
-    font-weight: 600;
+    margin-left: 8px;
+    font-size: 28px;
 }
 
-
-/* app */
-
-.app .instructions ol {
-    text-align: left;
+footer .social-links a:hover {
+    transition: all linear .15s;
+    -webkit-transition: all linear .15s;
+    -moz-transition: all linear .15s;
+    -ms-transition: all linear .15s;
+    -o-transition: all linear .15s;
 }
-.app .instructions ol li {
-    padding-left: .5em;
-}
+footer .social-links a {color: #666;}
+footer .social-links #linkedin a:hover {color: #0e76a8;}
+footer .social-links #github a:hover {color: #171515;}
+footer .social-links #youtube a:hover {color: #c4302b;}
 
-
-/* software */
-
-.software #main-content .wrap {
-    width: 60%;
-}
-.software pre {
-    max-width: 100%;
-    text-align: left;
-    opacity: .9;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    white-space: pre-wrap;
-    max-height: 300px;
-    border: 2px #fff solid;
-    border-radius: 10px;
-    padding: 2em;
+footer .me {
+    font-size: 16px;
+    color: #ddd;
 }
