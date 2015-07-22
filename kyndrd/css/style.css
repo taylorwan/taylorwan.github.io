@@ -35,14 +35,10 @@ section {
 	max-width: 300px;
 	width: 20%;
 	padding-top: 2em;
-	background: #caf4f4;
+	background: #fafafa;
 	color: #aaa;
 }
 
 .main-sidebar a {
 	color: #aaa;
-}
-
-.sidebar-section {
-
 }
