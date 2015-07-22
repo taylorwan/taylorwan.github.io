@@ -1,44 +1,130 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
 /* general */
 
 body {
-	font-family: sans-serif;
-	font-size: 14px;
-	line-height: 1.22em;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.5em;
+  color: #aaa;
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
+  color: #22ccbb;
 }
 
 section {
-	margin-bottom: 1em;
+  margin-bottom: 1.5em;
 }
 
 .wrap {
-	margin-right: 1.5em;
-	margin-left: 1.5em;
+  margin-right: 1.5em;
+  margin-left: 1.5em;
 }
 
 .title {
-	color: #22ccbb;
-	margin-bottom: 0.3em;
+  margin-bottom: 0.4em;
+  font-family: 'Montserrat';
+  text-transform: uppercase;
+  color: #22ccbb;
+}
+
+/* general components */
+
+.main,
+.main-sidebar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding-top: 2em;
 }
 
 /* sidebar */
 
 .main-sidebar {
-	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	min-width: 200px;
-	max-width: 300px;
-	width: 20%;
-	padding-top: 2em;
-	background: #fafafa;
-	color: #aaa;
+  left: 0;
+  width: 200px;
+  /*max-width: 20%;*/
+  /*min-width: 130px;*/
+  background: #fafafa;
 }
 
 .main-sidebar a {
-	color: #aaa;
+  color: #aaa;
+}
+
+.sidebar-section li {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* content */
+
+.main {
+  right: 0;
+  left: 200px;
+}
+
+
+/* chat */
+
+.chat {
+  color: #666;
+}
+
+.msg-timestamp {
+  text-align: center;
+  text-transform: uppercase;
+  color: #aaa;
+}
+
+.msg-history {
+  position: absolute;
+  top: 4em;
+  bottom: 5em;
+  width: 96%;
+}
+
+.msg-history .theirs:before {
+  color: #22ccbb;
+  content: 'Steph: ';
+}
+
+.msg-history .yours:before {
+  color: #22ccbb;
+  content: 'Me: ';
+}
+
+/* message sender */
+
+.msg-sender {
+  position: absolute;
+  bottom: 2em;
+  height: 3em;
+  width: 96%;
+}
+
+.msg-sender .your-msg {
+  padding: 0.5em;
+  padding-right: 3em; 
+  width: 95.7%;
+  height: 1.7em;
+  font-size: 1em;
+}
+
+.msg-sender .your-msg:focus {
+  outline: none;
+}
+
+.msg-sender .send-msg {
+  font-size: 1.5em;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0.4479em 0.5em;
+  background: #22ccbb;
+  color: #fff;
 }
