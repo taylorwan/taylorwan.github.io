@@ -81,11 +81,17 @@ section {
   color: #aaa;
 }
 
-.msg-history {
+.msg-history-container {
   position: absolute;
   top: 4em;
-  bottom: 5em;
+  bottom: 6em;
   width: 96%;
+  overflow-y: scroll;
+}
+
+.msg-history {
+  position: absolute;
+  bottom: 0;
 }
 
 .msg-history .name {

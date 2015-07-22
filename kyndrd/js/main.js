@@ -1,21 +1,26 @@
 $(function() {
 
   // send message if you press enter
-  $('.your-msg').keypress(function(event) {
+  $('#your-msg').keypress(function(event) {
     if (event.which == 13) {
       event.preventDefault();
       msgUpdate();
     }
   });
+  
+  // Firefox
+  $('#msg-history').bind('DOMMouseScroll', allowScroll);
+  // IE, Opera, Safari
+  $('#msg-history').bind('mousewheel', allowScroll);
 
   // send message if you click the send button
-  $('.send-msg').click(msgUpdate);
+  $('#send-msg').click(msgUpdate);
 
 });
 
 function msgUpdate() {
   // grab and generate message
-  var msg = $('.your-msg').val();
+  var msg = $('#your-msg').val();
   var msgHTML = toHTML(msg, 'yours');
 
   // append message and clear input
@@ -27,7 +32,16 @@ function msgUpdate() {
 }
 
 function addMsg(msg) {
-  $('.msg-history').append(msg);
+  $('#msg-history').append(msg);
+  viewNewMsg();
+}
+
+function viewNewMsg() {
+  $('#msg-history').css('bottom', 0);
+}
+function allowScroll() {
+  console.log("scroll detected");
+  $('#msg-history').css('bottom', 'auto');
 }
 
 function letsRespond(response) {
@@ -79,5 +93,5 @@ function toHTML(msg, v) {
 }
 
 function clearBox() {
-  $('.your-msg').val('');
+  $('#your-msg').val('');
 }
