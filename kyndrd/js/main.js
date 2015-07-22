@@ -38,9 +38,6 @@ function letsRespond(response) {
       addMsg(responseHTML);
     }, chance * 300);
   }
-  console.log("we're going to respond:");
-  console.log(response);
-  console.log("in " + chance * 300 + "ms");
 }
 
 function findResponse(msg) {
