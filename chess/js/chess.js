@@ -19,39 +19,55 @@ $( document ).ready( function() {
 	//upon click of a piece...
 	//click movement
 	$( '.square' ).click( function() {
+
 		var $active = $( '.square.active' );
 		var $this = $( this );
-		var turn = $( '.board' ).attr( 'turn' );
+
 		var orig = $active.attr( 'id' );
 		var cur = $this.attr( 'id' );
+
+		var turn = $( '.board' ).attr( 'turn' );
 		var thisColor = $this.find( '.piece' ).attr( 'color' );
 		var origColor = $active.find( '.piece' ).attr( 'color' );
 
+		var validMoves = [];
+
 		//square has piece
 		if ( !isEmpty( cur ) && ( turn == thisColor || turn == origColor ) ) {
+
 			//same square is clicked
 			if ( $this.hasClass( 'active' ) ) {
 				$( '.square' ).removeClass( 'active' );
+				clearValid();
+				console.log("clear valid: same square clicked")
 			}
 			else {
 				//dif piece clicked: if pieces have opposing colors
-				if ( thisColor && origColor && thisColor !== origColor ) {
+				if ( thisColor && origColor && thisColor !== origColor && $this.hasClass('valid') ) {
 					move( orig, cur );
 					$active.removeClass( 'active' );
+					clearValid();
+					console.log("clear valid: i just took someone's piece");
 
 				//dif piece clicked: if pieces have same colors
 				} else {
+					// find valid moves
+					validMoves = validMove( $this.find( '.piece' ).attr( 'type' ), cur );
 					$( '.square' ).removeClass( 'active' );
 					$this.toggleClass( 'active' );
+					console.log( validMoves );
 				}
 			}
 		}
 
 		//square empty & there is an active square: move a piece to this square
 		else if ( $active ) {
-			if ( turn == thisColor || turn == origColor )
+			if ( turn == thisColor || turn == origColor && $this.hasClass('valid') ) {
 				move( orig, cur );
-			$active.removeClass( 'active' );
+				$active.removeClass( 'active' );
+				clearValid();
+				console.log("clear valid: square empty and theres active square")
+			}
 		}
 	});
 
@@ -79,7 +95,7 @@ function isEmpty( id ) {
 	return $( '#' + id ).html() == "";
 }
 //check if square is valid
-function isValid( id ) {
+function isValidSquare( id ) {
 	var col = id.charCodeAt(0);
 	var row = id.charCodeAt(1);
 	if ( col < 'a') {
@@ -259,55 +275,90 @@ function deleteSquare( event ) {
 	$( '#deletee' ).val( '' );
 }
 
+function clearValid() {
+	$( '.square.valid' ).removeClass( 'valid' );
+}
+
+function addValid( id ) {
+	$( '#' + id ).addClass( 'valid' );
+}
+
+function testValidPawn( list, id, ifEmpty ) {
+	if ( ( isEmpty( id ) && ifEmpty ) ||
+		( !isEmpty( id ) && !ifEmpty && (currentTurn() === $('#' + id).attr("color")) ) ) {
+		list[list.length] = id;
+		addValid( id );
+	}
+}
+
+function testValid( list, id ) {
+	if ((currentTurn() === $('#' + id).attr("color")))
+}
 
 function validMove( piece, id ) {
+
+	console.log( "inside validMove with piece " + piece + " and id " + id );
 	
 	var validSquares = []
 	var length = 0;
-	
 
-	var row = ParseInt( id[1] );
-	var curR = String.fromCharCode( row );
-	var prevR = String.fromCharCode( row - 1 );
-	var nextR = String.fromCharCode( row + 1 );
+	var row = parseInt( id[1] );
 	var col = id.charCodeAt(0);
-	var curR = String.fromCharCode( row );
-	var prevR = String.fromCharCode( row - 1 );
-	var nextR = String.fromCharCode( row + 1 );
+	var curC = String.fromCharCode( col );
+	var prevC = String.fromCharCode( col - 1 );
+	var nextC = String.fromCharCode( col + 1 );
+	var prev2C = String.fromCharCode( col - 1 );
+	var next2C = String.fromCharCode( col + 1 );
 
 	if ( piece == "pawn" ) {
 
+		// next square
+		testValidPawn( validSquares, curC + ( row + forward() ), true );
+
 		// if first move
-		if ( row == 2 ) {
-			console.log("numerical 2");
-			validSquares[ length++ ] = col + "4";
-		} else if ( col == "2" ) {
-			console.log("alpha 2");
+		if ( row == 2 || row == 7 ) {
+			testValidPawn( validSquares, curC + ( row + forward() + forward() ), true );
 		}
 
-		//next square
-		var newRow = row + forward();
-		validSquares[ length++ ] = col + newRow;
-
 		//for capturable pieces: left
+		testValidPawn( validSquares, prevC + ( row + forward() ), false );
 
-		
+		//for capturable pieces: right
+		testValidPawn( validSquares, nextC + ( row + forward() ), false );
+	}
 
+	if ( piece == "knight" ) {
+		testValid( validSquares, nextC + ( row + forward() + forward() ), false );
+		testValid( validSquares, nextC + ( row + forward(false) + forward(false) ), false );
+		testValid( validSquares, prevC + ( row + forward() ), false );
+		testValid( validSquares, prevC + ( row + forward(false) + forward(false) ), false );
 	}
 
 	return validSquares;
 }
 
-function forward() {
-	var color = $( '.board' ).attr( 'turn' );
+
+function currentTurn() {
+	return $( '.board' ).attr( 'turn' );
+}
+
+function forward( forward ) {
+	var color = currentTurn();
+	var ret;
 	if ( color == "black" )
-		return -1;
+		ret = -1;
 	else if ( color == "white" )
-		return 1;
+		ret =  1;
 	else {
 		console.log( "invalid color?!" );
 		return 0;
 	}
+
+	// backwards instead
+	if ( !forward ) {
+		ret *= -1;
+	}
+	return ret;
 }
 
 
@@ -321,28 +372,28 @@ function reset( event ) {
 	$( '.captured .holder' ).html( '' );
 
 	//pawns
-	$( '.seven .square' ).html( '<div class="piece black pawn" color="black">o</div>' );
-	$( '.two .square' ).html( '<div class="piece white pawn" color="white">p</div>' );
+	$( '.seven .square' ).html( '<div class="piece black pawn" type="pawn" color="black">o</div>' );
+	$( '.two .square' ).html( '<div class="piece white pawn" type="pawn" color="white">p</div>' );
 	
 	//rooks
-	$( '#a8, #h8' ).html( '<div class="piece black rook" color="black">t</div>' );
-	$( '#a1, #h1' ).html( '<div class="piece white rook" color="white">r</div>' );
+	$( '#a8, #h8' ).html( '<div class="piece black rook" type="rook" color="black">t</div>' );
+	$( '#a1, #h1' ).html( '<div class="piece white rook" type="rook" color="white">r</div>' );
 
 	//knights
-	$( '#b8, #g8' ).html( '<div class="piece black knight" color="black">j</div>' );
-	$( '#b1, #g1' ).html( '<div class="piece white knight" color="white">h</div>' );
+	$( '#b8, #g8' ).html( '<div class="piece black knight" type="knight" color="black">j</div>' );
+	$( '#b1, #g1' ).html( '<div class="piece white knight" type="knight" color="white">h</div>' );
 
 	//bishops
-	$( '#c8, #f8' ).html( '<div class="piece black bishop" color="black">n</div>' );
-	$( '#c1, #f1' ).html( '<div class="piece white bishop" color="white">b</div>' );
+	$( '#c8, #f8' ).html( '<div class="piece black bishop" type="bishop" color="black">n</div>' );
+	$( '#c1, #f1' ).html( '<div class="piece white bishop" type="bishop" color="white">b</div>' );
 
 	//queens
-	$( '#d8' ).html( '<div class="piece black queen" color="black">w</div>' );
-	$( '#d1' ).html( '<div class="piece white queen" color="white">q</div>' );
+	$( '#d8' ).html( '<div class="piece black queen" type="queen" color="black">w</div>' );
+	$( '#d1' ).html( '<div class="piece white queen" type="queen" color="white">q</div>' );
 
 	//kings
-	$( '#e8' ).html( '<div class="piece black king" color="black">l</div>' );
-	$( '#e1' ).html( '<div class="piece white king" color="white">k</div>' );
+	$( '#e8' ).html( '<div class="piece black king" type="king" color="black">l</div>' );
+	$( '#e1' ).html( '<div class="piece white king" type="king" color="white">k</div>' );
 }
 
 
