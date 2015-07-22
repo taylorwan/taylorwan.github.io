@@ -14,11 +14,59 @@ $(function() {
 });
 
 function msgUpdate() {
+  // grab and generate message
   var msg = $('.your-msg').val();
   var msgHTML = toHTML(msg, 'yours');
 
-  $('.msg-history').append(msgHTML);
+  // append message and clear input
+  addMsg(msgHTML);
   clearBox();
+
+  // for now, fake a response
+  letsRespond(findResponse(msg));
+}
+
+function addMsg(msg) {
+  $('.msg-history').append(msg);
+}
+
+function letsRespond(response) {
+  var chance = parseInt(Math.random() * 4);
+  responseHTML = toHTML(response, 'theirs');
+  if (chance > 0) {
+    setTimeout(function(){
+      addMsg(responseHTML);
+    }, chance * 300);
+  }
+  console.log("we're going to respond:");
+  console.log(response);
+  console.log("in " + chance * 300 + "ms");
+}
+
+function findResponse(msg) {
+  msg = msg.toLowerCase();
+  if ( msg === "hello" ) {
+    return "Hey!";
+  } else if ( msg.indexOf("hey") >= 0) {
+    return "Hi there!";
+  } else if ( msg.indexOf("much") >= 0) {
+    return "Cool.";
+  } else if ( msg.indexOf("what's up") >= 0) {
+    return "Not much. How about you?";
+  }
+  var option = parseInt(Math.random() * 5);
+  switch (option) {
+    case 0:
+      return "Tell me more about that.";
+    case 1:
+      return "Why is that?";
+    case 2:
+      return "So where do you work?";
+    case 3:
+      return "You know, product management is really cool.";
+    case 4:
+      return "So what do you think of the weather?";
+  }
 }
 
 function toHTML(msg, v) {
