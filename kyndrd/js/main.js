@@ -70,7 +70,15 @@ function findResponse(msg) {
 }
 
 function toHTML(msg, v) {
-  return '<div class="msg-bubble ' + v + '">' + msg + '</div>';
+  var html = '<div class="msg-bubble ' + v + '"><span class="name">';
+  if (v === 'yours') {
+    html += 'Me';
+  } else {
+    html += $('#msg-name').text().split(' ')[0];
+  }
+  html += '</span>';
+  html += msg + '</div>';
+  return html;
 }
 
 function clearBox() {

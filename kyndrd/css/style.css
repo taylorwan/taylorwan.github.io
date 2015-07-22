@@ -88,14 +88,12 @@ section {
   width: 96%;
 }
 
-.msg-history .theirs:before {
+.msg-history .name {
   color: #22ccbb;
-  content: 'Steph: ';
 }
 
-.msg-history .yours:before {
-  color: #22ccbb;
-  content: 'Me: ';
+.msg-history .name:after {
+  content: ': ';
 }
 
 /* message sender */
