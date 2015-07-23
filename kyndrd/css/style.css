@@ -85,7 +85,8 @@ section {
   /*content: 'Kyndrd';*/
 }
 
-.main-sidebar a {
+.main-sidebar .chat a,
+.main-sidebar .forum a {
   color: #aaa;
 }
 
