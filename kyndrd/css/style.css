@@ -66,28 +66,13 @@ section {
 
 .main-sidebar {
   left: 0;
-  width: 200px;
-  /*max-width: 20%;*/
-  /*min-width: 130px;*/
+  width: 240px;
   background: #fafafa;
 }
 
-.main-sidebar:after {
-  position: absolute;
-  bottom: 1em;
-  width: 100%;
-  text-align: center;
-  text-transform: uppercase;
-  font-family: 'Montserrat';
-  font-size: 2em;
-  color: #22ccbb;
-  opacity: 0.3;
-  /*content: 'Kyndrd';*/
-}
-
-.main-sidebar .chat a,
-.main-sidebar .forum a {
-  color: #aaa;
+.main-sidebar .title,
+.main-sidebar a {
+  color: #888;
 }
 
 .sidebar-section li {
@@ -96,11 +81,68 @@ section {
   text-overflow: ellipsis;
 }
 
+.sidebar-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.sidebar-bottom .user-status {
+  float: left;
+  height: 10px;
+  width: 10px;
+  border-radius: 100%;
+  background: #aaa;
+  margin: 0.4em 0.5em 0;
+}
+
+/* chat module */
+
+.add-msg,
+.close-msg {
+    float: right;
+    opacity: .3;
+}
+
+.add-msg:hover,
+.close-msg:hover {
+    opacity: .9;
+}
+
+.user-status.online {
+  background: green;
+}
+
+/* my user */
+
+.bottom-my-user {
+  height: 50px;
+}
+
+.bottom-my-user .my-user-img {
+  float: left;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.bottom-my-user .my-user-name {
+  float: left;
+  margin-left: 0.5em;
+  line-height: 50px;
+}
+
+.bottom-my-user .user-status {
+  margin-top: 20px;
+  margin-left: 0.5em;
+}
+
 /* content */
 
 .main {
   right: 0;
-  left: 200px;
+  left: 240px;
 }
 
 
