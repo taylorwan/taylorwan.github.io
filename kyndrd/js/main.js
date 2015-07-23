@@ -1,5 +1,10 @@
 $(function() {
 
+  // remove chats from messages
+  $('.close-msg').click(function() {
+    $(this).parent().detach();
+  });
+
   // send message if you press enter
   $('#your-msg').keypress(function(event) {
     if (event.which == 13) {
