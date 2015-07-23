@@ -1,5 +1,5 @@
-@import url(//fonts.googleapis.com/css?family=Montserrat);
-@import url(//fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 /* general */
 
@@ -43,6 +43,7 @@ section {
   top: 50px;
   bottom: 0;
   padding-top: 1.5em;
+  padding-bottom: 6em;
 }
 
 /* topbar */
@@ -70,6 +71,19 @@ section {
   /*max-width: 20%;*/
   /*min-width: 130px;*/
   background: #fafafa;
+}
+
+.main-sidebar:after {
+  position: absolute;
+  bottom: 1em;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat';
+  font-size: 2em;
+  color: #22ccbb;
+  opacity: 0.3;
+  content: 'Kyndrd';
 }
 
 .main-sidebar a {
