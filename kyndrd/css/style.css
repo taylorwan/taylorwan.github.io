@@ -12,7 +12,11 @@ body {
 
 a {
   text-decoration: none;
-  color: #22ccbb;
+  color: #f0652f;
+}
+
+img {
+  max-height: 100%;
 }
 
 section {
@@ -28,7 +32,7 @@ section {
   margin-bottom: 0.4em;
   font-family: 'Montserrat';
   text-transform: uppercase;
-  color: #22ccbb;
+  color: #f0652f;
 }
 
 /* general components */
@@ -36,9 +40,26 @@ section {
 .main,
 .main-sidebar {
   position: absolute;
-  top: 0;
+  top: 50px;
   bottom: 0;
-  padding-top: 2em;
+  padding-top: 1.5em;
+}
+
+/* topbar */
+
+.main-topbar {
+  height: 50px;
+  background: #f0652f;
+}
+
+.main-topbar .logo {
+  float: left;
+  height: 50px;
+}
+.main-topbar .logo-text {
+  line-height: 50px;
+  color: #fff;
+  font-size: 1.6em;
 }
 
 /* sidebar */
@@ -95,7 +116,7 @@ section {
 }
 
 .msg-history .name {
-  color: #22ccbb;
+  color: #f0652f;
 }
 
 .msg-history .name:after {
@@ -129,6 +150,7 @@ section {
   right: 0;
   top: 0;
   padding: 0.4479em 0.5em;
-  background: #22ccbb;
+  background: #f0652f;
+  /*background: #22ccbb;*/
   color: #fff;
 }
