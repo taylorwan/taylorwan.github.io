@@ -64,6 +64,8 @@ function findResponse(msg) {
     return "Cool.";
   } else if ( msg.indexOf("what's up") >= 0) {
     return "Not much. How about you?";
+  } else if ( msg.indexOf("ugh") >= 0) {
+    return "Sorry, have I annoyed you?";
   } else if ( msg.indexOf("bye") >= 0) {
     return "Ciao!";
   }
