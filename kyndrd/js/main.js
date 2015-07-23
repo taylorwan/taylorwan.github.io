@@ -7,7 +7,7 @@ $(function() {
       msgUpdate();
     }
   });
-  
+
   // Firefox
   $('#msg-history').bind('DOMMouseScroll', allowScroll);
   // IE, Opera, Safari
@@ -56,7 +56,7 @@ function letsRespond(response) {
 
 function findResponse(msg) {
   msg = msg.toLowerCase();
-  if ( msg === "hello" ) {
+  if ( msg.indexOf("hello") >= 0) {
     return "Hey!";
   } else if ( msg.indexOf("hey") >= 0) {
     return "Hi there!";
@@ -64,8 +64,10 @@ function findResponse(msg) {
     return "Cool.";
   } else if ( msg.indexOf("what's up") >= 0) {
     return "Not much. How about you?";
+  } else if ( msg.indexOf("bye") >= 0) {
+    return "Ciao!";
   }
-  var option = parseInt(Math.random() * 5);
+  var option = parseInt(Math.random() * 6);
   switch (option) {
     case 0:
       return "Tell me more about that.";
@@ -77,6 +79,8 @@ function findResponse(msg) {
       return "You know, product management is really cool.";
     case 4:
       return "So what do you think of the weather?";
+    case 5:
+      return "Hmm.";
   }
 }
 
