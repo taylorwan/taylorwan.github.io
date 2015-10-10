@@ -1,0 +1,10 @@
+.popup {
+    position: fixed;
+    padding: 2em;
+    top: 40%;
+    left: 50%;
+    box-shadow: 0 0 0 3000px rgba(0, 0, 0, 0.58);
+    border: 1px solid #000;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}

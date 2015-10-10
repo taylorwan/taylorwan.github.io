@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Do You Like Me?</title>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="js/authenticate.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/authenticate.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '722395057890979',
+        xfbml      : true,
+        version    : 'v2.5'
+      });
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "http://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+
+	<nav id="main-nav">
+		Do You Like Me?
+    <div
+      class="fb-like"
+      data-share="true"
+      data-width="450"
+      data-show-faces="true">
+    </div>
+	</nav>
+
+	<!-- main -->
+	<div id="main-content">
+		<div id="authenticate" class="popup">
+      <!-- replace this! -->
+			<a href="#" class="button" id="fb-authenticate">Log In</a>
+      <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+		</div>
+		<div id="results">
+			<div class="box">
+				<div class="title-wrap">Photos</div>
+				<table class="table table-responsive">
+					<thead>
+						<tr>
+							<td>Friend</td>
+							<td>% Liked</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Hermione Granger</td>
+							<td>77%</td>
+						</tr>
+						<tr>
+							<td>Harry Potter</td>
+							<td>56%</td>
+						</tr>
+						<tr>
+							<td>Ron Weasley</td>
+							<td>26%</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div><!-- end main-->
+
+
+</body>
+</html>
