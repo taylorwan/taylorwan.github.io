@@ -48,20 +48,20 @@ a {text-decoration: none;}
     /*color: rgb(115, 33, 136);*/
 }
 
-#resume a {color: #b8b8b8;}
-#songwritr a {color: #bababa;}
-#birthday a {color: #bdbdbd;}
-#halloffame a {color: #ccc;}
-#atomic a {color: #ddd;}
-#freely a {color: #eee;}
+.darkest a {color: #b8b8b8;}
+.dark a {color: #bababa;}
+.dark a {color: #bdbdbd;}
+.middle a {color: #ccc;}
+.light a {color: #ddd;}
+.lightest a {color: #eee;}
 
 .links a:hover {padding-left: 3px;}
-#resume a:hover {color: #888;}
-#songwritr a:hover {color: #8a8a8a;}
-#birthday a:hover {color: #8f8f8f;}
-#halloffame a:hover {color: #9c9c9c;}
-#atomic a:hover {color: #adadad;}
-#freely a:hover {color: #bebebe;}
+.darkest a:hover {color: #888;}
+.dark a:hover {color: #8a8a8a;}
+.dark a:hover {color: #8f8f8f;}
+.middle a:hover {color: #9c9c9c;}
+.light a:hover {color: #adadad;}
+.lightest a:hover {color: #bebebe;}
 
 
 /* --- footer --- */
