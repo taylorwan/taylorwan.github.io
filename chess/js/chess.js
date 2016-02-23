@@ -20,6 +20,8 @@ $( document ).ready( function() {
 	//click movement
 	$( '.square' ).click( function() {
 
+		console.log("click detected");
+
 		var $active = $( '.square.active' );
 		var $this = $( this );
 
@@ -34,40 +36,56 @@ $( document ).ready( function() {
 
 		//square has piece
 		if ( !isEmpty( cur ) && ( turn == thisColor || turn == origColor ) ) {
-
+			// no active pieces
+			if ( $active.length === 0 ) {
+				console.log("no active pieces, activating current square");
+				$this.toggleClass( 'active' );
+			
 			//same square is clicked
-			if ( $this.hasClass( 'active' ) ) {
+			} else if ( $this.hasClass( 'active' ) ) {
+				console.log("clear valid: same square clicked");
 				$( '.square' ).removeClass( 'active' );
-				clearValid();
-				console.log("clear valid: same square clicked")
-			}
-			else {
+				// clearValid();
+
+			} else {
 				//dif piece clicked: if pieces have opposing colors
-				if ( thisColor && origColor && thisColor !== origColor && $this.hasClass('valid') ) {
+				// if ( thisColor && origColor && thisColor !== origColor && $this.hasClass('valid') ) {
+				if ( thisColor && origColor && thisColor !== origColor ) {
+					console.log("clear valid: i just took someone's piece");
 					move( orig, cur );
 					$active.removeClass( 'active' );
-					clearValid();
-					console.log("clear valid: i just took someone's piece");
+					// clearValid();
 
 				//dif piece clicked: if pieces have same colors
 				} else {
+					console.log("pieces have same colors");
 					// find valid moves
-					validMoves = validMove( $this.find( '.piece' ).attr( 'type' ), cur );
+					// validMoves = validMove( $this.find( '.piece' ).attr( 'type' ), cur );
 					$( '.square' ).removeClass( 'active' );
 					$this.toggleClass( 'active' );
-					console.log( validMoves );
+					// console.log( validMoves );
 				}
 			}
 		}
 
 		//square empty & there is an active square: move a piece to this square
-		else if ( $active ) {
-			if ( turn == thisColor || turn == origColor && $this.hasClass('valid') ) {
+		else if ( $active.length > 0 ) {
+			console.log("turn is: " + turn);
+			console.log("origColor is: " + origColor);
+			console.log("classes are: " + $this.attr('class'));
+			// if ( turn == thisColor || turn == origColor && $this.hasClass('valid') ) {
+			if ( turn == thisColor || turn == origColor ) {
 				move( orig, cur );
 				$active.removeClass( 'active' );
-				clearValid();
-				console.log("clear valid: square empty and theres active square")
+				// clearValid();
+				// console.log("clear valid: square empty and theres active square");
+			} else {
+				console.log("wtf idk 2");
 			}
+		}
+
+		else {
+			console.log("wtf idk");
 		}
 	});
 
@@ -92,7 +110,7 @@ function initialize() {
 
 //check if square is empty
 function isEmpty( id ) {
-	return $( '#' + id ).html() == "";
+	return $( '#' + id ).html() === "";
 }
 //check if square is valid
 function isValidSquare( id ) {
@@ -166,8 +184,9 @@ function move( orig , dest ) {
 
 	//else, capture
 	} else {
-		deleteAround( dest );
+		// deleteAround( dest );
 	}
+	copy( orig , dest );
 	deleteAt( orig );
 
 	// turn-taking
@@ -291,9 +310,9 @@ function testValidPawn( list, id, ifEmpty ) {
 	}
 }
 
-function testValid( list, id ) {
-	if ((currentTurn() === $('#' + id).attr("color")))
-}
+// function testValid( list, id ) {
+// 	if ((currentTurn() === $('#' + id).attr("color")))
+// }
 
 function validMove( piece, id ) {
 
@@ -327,12 +346,12 @@ function validMove( piece, id ) {
 		testValidPawn( validSquares, nextC + ( row + forward() ), false );
 	}
 
-	if ( piece == "knight" ) {
-		testValid( validSquares, nextC + ( row + forward() + forward() ), false );
-		testValid( validSquares, nextC + ( row + forward(false) + forward(false) ), false );
-		testValid( validSquares, prevC + ( row + forward() ), false );
-		testValid( validSquares, prevC + ( row + forward(false) + forward(false) ), false );
-	}
+	// if ( piece == "knight" ) {
+	// 	testValid( validSquares, nextC + ( row + forward() + forward() ), false );
+	// 	testValid( validSquares, nextC + ( row + forward(false) + forward(false) ), false );
+	// 	testValid( validSquares, prevC + ( row + forward() ), false );
+	// 	testValid( validSquares, prevC + ( row + forward(false) + forward(false) ), false );
+	// }
 
 	return validSquares;
 }
