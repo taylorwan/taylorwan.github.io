@@ -183,7 +183,7 @@ a {text-decoration:none; color: #ddd;}
     background: rgba(154, 240, 247, 1) !important;
 }
 .square.valid {
-    box-shadow: rgba(206, 244, 247, 0.8) 0 0 1000px inset;
+    box-shadow: rgba(206, 244, 247, 0.8) 0 0 1000px inset, rgba(154, 240, 247, 1) 0 0 0 1px inset;
 }
 
 
