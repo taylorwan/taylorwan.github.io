@@ -1,0 +1,32 @@
+body {
+  font-size: 12px; }
+
+.state {
+  fill: none;
+  stroke: #a9a9a9;
+  stroke-width: 1; }
+  .state:hover {
+    fill-opacity: 0.5; }
+
+#tooltip {
+  position: absolute;
+  display: block;
+  padding: 0.5em;
+  margin: 10px;
+  line-height: 1.5em;
+  border: 2px solid #7b5384;
+  background: #ffffff;
+  font: 1em sans-serif;
+  color: #7b5384;
+  pointer-events: none;
+  opacity: 0; }
+  #tooltip h4 {
+    margin: 0; }
+  #tooltip table {
+    table-layout: fixed; }
+  #tooltip tr td {
+    padding: 0.1em 0.5em; }
+    #tooltip tr td:first-child {
+      padding-left: 0; }
+
+/*# sourceMappingURL=map.css.map */

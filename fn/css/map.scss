@@ -1,0 +1,45 @@
+$fn-purple: #7b5384;
+$white: #ffffff;
+
+body {
+	font-size: 12px;
+}
+
+.state {
+    fill: none;
+    stroke: #a9a9a9;
+    stroke-width: 1;
+
+ 	&:hover {
+    	fill-opacity: 0.5;
+    }
+}
+
+#tooltip {
+    position: absolute;
+    display: block;
+    padding: 0.5em;
+    margin: 10px;
+    line-height: 1.5em;
+    border: 2px solid $fn-purple;
+    background: $white;
+    font: 1em sans-serif;
+    color: $fn-purple;
+    pointer-events: none;
+    opacity: 0;
+
+	h4 {
+	    margin: 0;
+	}
+
+	table {
+	    table-layout: fixed;
+	}
+
+	tr td {
+	    padding: 0.1em 0.5em;
+	    &:first-child {
+	    	padding-left: 0;
+	    }
+	}
+}
