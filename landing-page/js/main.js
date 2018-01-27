@@ -14,20 +14,20 @@ $(document).ready(function() {
     });
   });
 
-  //nav links: go to according pane
-  // $('.directive li').click(function() {
-  //   var type = $(this).attr('id');
-  //   $('html, body').animate({
-  //     scrollTop: $('.pane.' + type).offset().top - 21
-  //   }, 500);
-  // });
+  // nav links: go to according pane
+  $('.directive li').click(function() {
+    var type = $(this).attr('id');
+    $('html, body').animate({
+      scrollTop: $('.pane.' + type).offset().top - 21
+    }, 500);
+  });
 });
 
 
 
 function initialize() {
-  // var height = $(window).height();
+  var height = $(window).height();
 
-  //pane heights: set to splash pane dimensions
-  // $('.home').css('height', height - 200);
+  // pane heights: set to splash pane dimensions
+  $('.home').css('height', height - 200);
 }
