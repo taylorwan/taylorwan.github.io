@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Bungee+Hairline|Playfair+Display|Raleway');
+/*
+
+Our colors - from colordrop.io
+- #F8937E (pink)
+- #F7E4C5 (yellow)
+- #445252 (dark green)
+- #555 (black)
+
+Our fonts - from google fonts
+'Abril Fatface'
+'Bungee Hairline'
+'Playfair Display'
+'Raleway'
+*/
+
+/* general styles */
+
+body {
+  color: #445252;
+}
+
+a {
+  color: #F8937E;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.logo {
+  font-family: 'Abril Fatface', serif;
+  font-size: 1.2em;
+}
+
+.pane {
+  padding: 100px 0;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.title {
+  font-family: 'Abril Fatface', serif;
+  font-size: 2em;
+}
+
+button {
+  padding: 1em 1.5em;
+  border: none;
+  border-radius: 2px;
+  background: #F7F7F7;
+  font-variant: all-small-caps;
+}
+
+button.primary {
+  color: #FFF;
+  background: #F8937E;
+}
+
+button.small {
+  padding: 5px 10px;
+}
+
+button.big {
+  font-size: 18px;
+}
+
+button:hover {
+  background: #445252;
+  cursor: pointer;
+}
+
+li {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.highlight {
+  opacity: 0.6;
+}
+
+.fade-in {
+  opacity: 0;
+}
+
+/* nav */
+
+nav {
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  background: #FFFFFFF0;
+  z-index: 100;
+  border-bottom: 1px solid #F7F7F7;
+}
+
+nav .logo {
+  float: left;
+  font-size: 20px;
+}
+
+.directive {
+  float: left;
+  line-height: 24px;
+  margin-left: 10px;
+  font-variant: all-small-caps;
+}
+
+.directive li:hover,
+.login:hover {
+  cursor: pointer;
+}
+
+.account {
+  float: right;
+  font-variant: all-small-caps;
+}
+
+/* splash pane */
+
+.home {
+  background-image: url(https://images.unsplash.com/photo-1505935428862-770b6f24f629?ixlib=rb-0.3.5&s=603c03635f44e183196652e5107081ca&auto=format&fit=crop&w=3294&q=80);
+}
+
+.home .wrap {
+  font-size: 3em;
+  color: #445252;
+  text-align:center;
+  margin-top: 3.5em;
+}
+
+.typer:after {
+  content: 'dine';
+  color: #445252;
+  animation: 8s typer infinite;
+  margin-left: 2px;
+}
+
+.subtitle:after {
+  content:"|";
+  color:#445252;
+  animation: 1.2s blink infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0% { opacity: 0.6; }
+  50% { opacity: 0; }
+}
+@-webkit-keyframes blink {
+  0% { opacity: 0.6; }
+  50% { opacity: 0; }
+}
+
+@keyframes typer {
+  0% { content: 'dine'; }
+  3% { content: 'din'; }
+  6% { content: 'di'; }
+  9% { content: 'd'; }
+  12% { content: ''; }
+  17% { content: 'e'; }
+  22% { content: 'ea'; }
+  27% { content: 'eat'; }
+  47% { content: 'ea'; }
+  50% { content: 'e'; }
+  53% { content: ''; }
+  58% { content: 'd'; }
+  63% { content: 'di'; }
+  68% { content: 'din'; }
+  73% { content: 'dine'; }
+  100% { content: 'dine'; }
+}
+@-webkit-keyframes typer {
+  0% { content: 'dine'; }
+  5% { content: 'din'; }
+  10% { content: 'di'; }
+  15% { content: 'd'; }
+  20% { content: ''; }
+  25% { content: 'e'; }
+  33% { content: 'ea'; }
+  41% { content: 'eat'; }
+  51% { content: 'ea'; }
+  56% { content: 'e'; }
+  61% { content: ''; }
+  66% { content: 'd'; }
+  74% { content: 'di'; }
+  82% { content: 'din'; }
+  90% { content: 'dine'; }
+  100% { content: 'dine'; }
+}
+
+.home button {
+  margin-top: 2em;
+}
+
+/* about pane */
+
+.about img,
+.about-more img {
+  max-width: 100%;
+}
+
+.photo-pane > div {
+  width: 50%;
+  float: left;
+  position: relative;
+  margin: 0 2.5%;
+}
+
+.photo-pane .content {
+  width: 30%;
+  position: relative;
+  margin-top: 4em;
+  margin-left: 5%;
+}
+
+.photo-pane .content p {
+  margin-top: 1em;
+}
+
+.about .photo-pane .bottom,
+.about-more .photo-pane .bottom {
+  position: relative;
+  z-index: 15;
+  width: 50%;
+}
+
+.about .photo-pane .back,
+.about-more .photo-pane .back {
+  position: absolute;
+  right: 0;
+  max-height: 70%;
+  top: 10%;
+}
+
+/* details pane */
+
+
+.details {
+  background: #F7E4C5;
+  text-align: center;
+}
+
+ul.box-holder {
+  text-align: center;
+  display: flex;
+  align-items: stretch;
+  display: inline-flex;
+}
+
+.box {
+  display: inline-block;
+  width: 160px;
+  background: #F7F7F7;
+  padding: 2em;
+  border-radius: 2px;
+  top: 0;
+  position: relative;
+}
+
+.box:hover {
+  top: -2px;
+}
+
+.box .title {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.box {
+  color: #555;
+  font-size: 12px;
+}
+
+.learn-more {
+  font-variant: all-small-caps;
+  margin-top: 6px;
+  display: inline-block;
+}
+
+
+/* footer */
+
+.end {
+  text-align: center;
+}
+
+.end button {
+  margin-top: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 60px 0;
+  background: #F7F7F7;
+  color: #BBB;
+  font-size: 12px;
+}
+
+footer .love {
+  margin-top: 8px;
+}

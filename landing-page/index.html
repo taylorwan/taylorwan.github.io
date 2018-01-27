@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Your Page Title -->
+  <title>Foodsy: My Hoya Hacks Project</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/ico" href="img/icon.png"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=0.6, user-scalable=no">
+  <script type="text/javascript">
+    function page_Load() {
+      setTimeout(function() { window.scrollTo(0, 1); }, 100);
+      }
+  </script>
+
+  <!-- JQuery + any of your scripts -->
+  <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script><style type="text/css"></style> -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+
+  <!-- Reset CSS, font awesome + any custom styles -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/general.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Optional: Google analytics can go here -->
+</head>
+
+<body>
+
+  <!-- Header-->
+  <nav>
+    <div class="wrap">
+
+      <!-- Your logo here, font or image -->
+      <div class="logo">
+        Foodsy
+      </div>
+
+      <ul class="directive">
+        <li id="home">
+          Home
+        </li>
+        <li id="about">
+          About
+        </li>
+        <li id="details">
+          Details
+        </li>
+      </ul>
+
+      <ul class="account">
+        <li><span class="login">Log In</span></li>
+        <li><button class="signup primary small">Sign Up</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Your content -->
+  <section class="home pane">
+    <div class="wrap">
+      <div class="title logo">Foodsy</div> 
+      <div class="subtitle">A new way to <span class="highlight typer"></span></div>
+      <button class="primary big">Find out more ⇒</button> <!-- → ⇒ -->
+    </div>
+  </section>
+
+  <section class="about pane">
+    <div class="wrap">
+      <div class="photo-pane photo-left">
+        <div class="photo-holder">
+          <img src="https://images.unsplash.com/photo-1513597214118-bbc02f2e2a2b?ixlib=rb-0.3.5&s=05fc8223f93ac3e6f4b2b2db2c4cfee3&auto=format&fit=crop&w=3083&q=80" alt="" class="bottom">
+          <img src="https://images.unsplash.com/photo-1493274409115-3f5143dd3d9a?ixlib=rb-0.3.5&s=a0f77042b42cca2bb290fa7423763873&auto=format&fit=crop&w=3422&q=80" alt="" class="back">
+        </div>
+        <div class="content fade-in">
+          <div class="title">Take your palette around the world, <span class="highlight">from right where you are</span></div>
+          <p>Good food shouldn't be hard to find. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p>Join us for the adventure of a lifetime.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-more pane">
+    <div class="wrap">
+      <div class="photo-pane photo-right">
+        <div class="content fade-in">
+          <div class="title">Let us do the work. <span class="highlight">Sit back, relax, and we'll come to you!</span></div>
+          <p>Amazing food delivered to your doorstep. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p>Travel without taking a single step!</p>
+        </div>
+        <div class="photo-holder">
+          <img src="https://images.unsplash.com/photo-1470338745628-171cf53de3a8?ixlib=rb-0.3.5&s=a104e41cef67a2a04a726d9383799156&auto=format&fit=crop&w=3068&q=80" alt="" class="bottom">
+          <img src="https://images.unsplash.com/photo-1467189386127-c4e5e31ee213?ixlib=rb-0.3.5&s=647646f5ad73ceb9ebe17a9cd38e4de3&auto=format&fit=crop&w=3150&q=80" class="back">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="details pane">
+    <div class="wrap">
+      <ul class="box-holder">
+        <li class="box fade-in">
+          <div class="title">Food from everywhere</div>
+          <p>We source from local sustainable farms to create meals from all over the world. Our in-house chefs curate our weekly menus, each with a focus on a different area of the world.</p>
+          <a href="#" class="learn-more">Learn more ⇒</a>
+        </li>
+        <li class="box fade-in">
+          <div class="title">Delivered to your door</div>
+          <p>Let us do the work. Sit back, relax, and we'll come to you! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <a href="#" class="learn-more">Learn more ⇒</a>
+        </li>
+        <li class="box fade-in">
+          <div class="title">Sustainable foods</div>
+          <p>We source from local sustainable farms to create meals from all over the world. Our in-house chefs curate our weekly menus, each with a focus on a different area of the world.</p>
+          <a href="#" class="learn-more">Learn more ⇒</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="end pane">
+    <div class="wrap">
+      <div class="title">Give us a shot!</div>
+      <button class="sign-up big primary">
+        Sign up ⇒
+      </button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap">
+      <div class="logo">Foodsy</div>
+      <div class="love">Made with <i class="fa fa-heart" aria-hidden="true"></i> for Hoya Hacks</div>
+    </div>
+  </footer>
+
+</body>
+</html>
